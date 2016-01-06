@@ -1,0 +1,85 @@
+*{margin:0; padding:0; -webkit-tap-highlight-color:rgba(0,0,0,0);}
+body{background-image:url(/Images/gameback.jpg); background-repeat:no-repeat; background-size:100%; background-color: #000001; background-position:left top;  }
+img{max-width:100%;}
+.center {text-align:center;}
+.fullWidth {width: 100%;}
+.nian {width:75%; margin-top:35%; -webkit-animation-name:nianNormen; -webkit-animation-duration:8s; -webkit-animation-play-state:running; -webkit-animation-iteration-count:infinite;}
+@-webkit-keyframes nianNormen{
+    0%   { -webkit-transform:translate(0px,0px);}
+    50%  { -webkit-transform: translate(0px,30px);}
+    100% { -webkit-transform:translate(0px,0px);}
+}
+@-webkit-keyframes nianAttack{
+    0%   { -webkit-transform:scale(1);}
+    25%   { -webkit-transform:scale(0.8);}
+    50%   { -webkit-transform:scale(1);}
+    75%   { -webkit-transform:scale(0.8);}
+    100%   { -webkit-transform:scale(1);}
+}
+.attackNumBox{position:absolute;top:18%;right:5%;color:#FFF;font-size:15px;font-weight:bold;width:15%;text-align:center; }
+.attackNumBox img {-webkit-animation-name:myfirst3; -webkit-animation-duration:5s; -webkit-animation-play-state:running; -webkit-animation-iteration-count:infinite;}
+@-webkit-keyframes myfirst3{
+    0%   { -webkit-transform:scale(1);}
+    50% { -webkit-transform:scale(1.5);}
+    100% { -webkit-transform:scale(1);}
+}
+.gameDataBox {  text-align:right;margin:3% 0 10%  }
+.gameDataBox .imgLeft {width:50%;position:absolute; top: 0px;left: 10px}
+.gameDataBox .imgRight {width:50%;position:absolute; top: 0px;right: 10px}
+.gameDataBox .numLeft{color: white; position: absolute; top: 0px;left: 0px;margin-top: 6.5%;margin-left: 20%;font-size: 20px;font-weight: bold;}
+.gameDataBox .numRight{color: white; position: absolute; top: 0px;right: 0px;margin-top: 6.5%;margin-right: 22%;font-size: 20px;font-weight: bold;}
+
+.gameButton{width:100%;color:#FFF;font-size:0.8em;text-align:center;line-height:1.5em;margin-top:2%;}
+.gameButton .btnLeft{width:55%;position: absolute; left: 2%}
+.gameButton .btnRight{width:55%;position: absolute; right: 2%}
+
+.share{width:100%;height:100%;background:#000;position:absolute;top:0;left:0;z-index:1000;text-align:center;opacity:0.8;display:none;}
+.share img{width:80%;}
+.logo {width:60%; margin-top: 40%}
+
+.alert{width:80%;height:100%;position:absolute;top:35%;left:10%;z-index:999;text-align:center;display:none;}
+.alert .text {position:absolute;top:5%;color:#FFF;font-size:20px;width:100%;}
+.alert .btn {width:20%;position:absolute;left:40%;top:13%;}
+
+.exchange-box{width:74%; position:absolute; top:20%; left:10%; display:none; z-index:900;  padding:3%; background:url(/Images/box.png); background-repeat:no-repeat; background-size:100%;}
+.exchange-box .close {width:100%;text-align:center;margin-top:2%}
+.exchange-box dl{font-size:0.8em;color:#FFF; line-height:1.8em;height:255px;overflow-y:auto;text-align: center;list-style:none}
+
+.chuizi-box {position: absolute;top:0px; left: 0px; z-index: 900;margin-top: 20%;margin-left: -8%; display: none}
+/*.chuizi-box img{width: 55%;-webkit-animation-name:myfirst4; -webkit-animation-duration:1s; -webkit-animation-play-state:running; -webkit-animation-iteration-count:infinite;}*/
+.chuizi-box img{width: 55%;}
+
+.coin-box{position: absolute;top: 0px;left: 0px;width: 100%; margin-top:20%; z-index: 951 ;display: none}
+.coin-box img {width: 100%;-webkit-animation-name:myfirst4; -webkit-animation-duration:3s; -webkit-animation-play-state:running; -webkit-animation-iteration-count:infinite;}
+@-webkit-keyframes myfirst4{
+    0%   { -webkit-transform: translate(0px,0px);}
+    100% { -webkit-transform: translate(0px,50%);}
+}
+@media all and (max-width:320px){
+    .nian {width:60%;}
+    .alert .btn {top:50%;}
+}
+#customers {
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    width:100%;
+    border-collapse:collapse;
+}
+
+#customers td, #customers th {
+    font-size:1em;
+    border:1px solid #e6c7e8;
+    padding:3px 7px 2px 7px;
+}
+
+#customers th {
+    font-size:1.1em;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color: #ea7568;
+    color:#ffffff;
+}
+#customers tr.alt td {
+    color:#000000;
+    background-color: #f26d80;
+    opacity: 0.5;
+}
