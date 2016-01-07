@@ -12,10 +12,12 @@ class IndexController extends Controller
     public function __construct()
     {
         $this->wechat = new \App\Http\Controllers\WeAuthController;
+        $this->user = $this->wechat->getWechatInfo();
     }
     //开始页面
     public function startIndex(){
         return view('nianShou.start',[
+            'user'      =>  $this->user,
             'js'        =>  $this->wechat->jsSet(),
             'userNum'   =>  self::getUserCount(),
             'coin_soon' =>  self::coinSoon(),
@@ -25,7 +27,6 @@ class IndexController extends Controller
 
     //活动首页
     public function index(){
-        $this->user = $this->wechat->getWechatInfo();
         return view('nianshou.index',[
             'user'      =>  $this->user,
             'js'        =>  $this->wechat->jsSet(),
