@@ -36,7 +36,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/','IndexController@startIndex');
     Route::get('/nianshou','IndexController@index');
     //用户分享链接
-    Route::get('/sharelink/{id}','ShareController@ShareLink');
+    Route::get('/sharelink/{parentid}','ShareController@ShareLink');
     //用户奖品页
     Route::get('/myprize','PrizeController@myPrize');
     //奖品兑换页
