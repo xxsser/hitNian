@@ -31,7 +31,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/admin', 'AdminController@index');
     Route::post('/admin/canche_code', 'AdminController@cancheCode');
     Route::get('/ExpiryId/{fid}', 'AdminController@cancheWithQr')->where('fid','^[0-9]*$');
-    Route::post('/admin/canche_fid','AdminController@cacheFid');
+    Route::post('/admin/canche_fid','AdminController@cancheFid');
     //活动首页路由
     Route::get('/','IndexController@startIndex');
     Route::get('/nianshou','IndexController@index');
