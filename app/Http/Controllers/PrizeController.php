@@ -28,9 +28,8 @@ class PrizeController extends Controller
         $fid = Session::get('logged_user')['fid'];
         //查询用户所有金币
         $userCoin = \App\Gamedata::where('fan_id', $fid)->pluck('coins');
-
         //查询奖品所需金币
-        $giftInfo =  \App\Prize::select('coin')->where('id',$request->input('pid'))->where('coin','<',$userCoin)->Exchange()->first();
+        $giftInfo =  \App\Prize::select('coin')->where('id',$request->input('pid'))->where('coin','<=',$userCoin)->Exchange()->first();
         if(empty($giftInfo)){
             return ['state'=>'coin_lack'];
         }
@@ -41,7 +40,7 @@ class PrizeController extends Controller
                 'fan_id'    =>  $fid,
                 'prize_id'  =>  $request->input('pid'),
             ]);
-            DB::table('gamedatas')->decrement('coins',$giftInfo->coin);
+            DB::table('gamedatas')->where('fan_id',$fid)->decrement('coins',$giftInfo->coin);
             DB::commit();
         }catch(Exception $e) {
             DB::rollback();
