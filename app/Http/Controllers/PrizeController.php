@@ -52,7 +52,10 @@ class PrizeController extends Controller
     //用户查询奖品页
     public function myPrize(){
         $user = self::getWeAuth();
-        return view('nianShou.myGift',['gifts'=>self::getFanPrizes($user['fid'])]);
+        return view('nianShou.myGift',[
+            'user'  =>  $user,
+            'gifts' =>  self::getFanPrizes($user['fid'])
+        ]);
     }
 
     //获取用户奖品查询
