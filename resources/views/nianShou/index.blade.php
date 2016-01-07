@@ -67,7 +67,7 @@
                 <tr>
                     <td>{{ $gift['name'] }}</td>
                     <td>{{ $gift['coin'] }}</td>
-                    <td><button class="exchange" value="{{ $gift['id'] }}">兑换</button></td>
+                    <td><button class="exchange btn-short" value="{{ $gift['id'] }}">兑换</button></td>
                 </tr>
             @endforeach
         </table>
