@@ -46,7 +46,6 @@ img{max-width:100%;}
 .exchange-box dl{font-size:0.8em;color:#FFF; line-height:1.8em;height:255px;overflow-y:auto;text-align: center;list-style:none}
 
 .chuizi-box {position: absolute;top:0px; left: 0px; z-index: 900;margin-top: 20%;margin-left: -8%; display: none}
-/*.chuizi-box img{width: 55%;-webkit-animation-name:myfirst4; -webkit-animation-duration:1s; -webkit-animation-play-state:running; -webkit-animation-iteration-count:infinite;}*/
 .chuizi-box img{width: 55%;}
 
 .coin-box{position: absolute;top: 0px;left: 0px;width: 100%; margin-top:20%; z-index: 951 ;display: none}
@@ -58,28 +57,10 @@ img{max-width:100%;}
 @media all and (max-width:320px){
     .nian {width:60%;}
     .alert .btn {top:50%;}
+    .gameDataBox .numLeft{margin-left: 23%;}
+    .gameDataBox .numRight{margin-right: 25%;}
 }
-#customers {
-    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-    width:100%;
-    border-collapse:collapse;
-}
-
-#customers td, #customers th {
-    font-size:1em;
-    border:1px solid #e6c7e8;
-    padding:3px 7px 2px 7px;
-}
-
-#customers th {
-    font-size:1.1em;
-    padding-top:5px;
-    padding-bottom:4px;
-    background-color: #ea7568;
-    color:#ffffff;
-}
-#customers tr.alt td {
-    color:#000000;
-    background-color: #f26d80;
-    opacity: 0.5;
-}
+#customers {  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;  width:100%;  border-collapse:collapse;  }
+#customers td, #customers th {  font-size:1em;  border:1px solid #e6c7e8;  padding:3px 7px 2px 7px;  }
+#customers th {  font-size:1.1em;  padding-top:5px;  padding-bottom:4px;  background-color: #ea7568;  color:#ffffff;  }
+#customers tr.alt td {  color:#000000;  background-color: #f26d80;  opacity: 0.5;  }
