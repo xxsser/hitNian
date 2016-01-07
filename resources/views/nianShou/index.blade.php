@@ -7,7 +7,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>年兽大战,稀有宝物随机爆</title>
-    <link rel="stylesheet" href="/Css/style.css" />
+    <link rel="stylesheet" href="/Css/style.css?v=011" />
     <script type="text/javascript" src="/Js/jquery.min.js"></script>
     <script type="text/javascript" src="Js/main.js?v=1.1"></script>
     <script type="text/javascript" src="/Js/jQueryRotateCompressed.js"></script>
@@ -71,6 +71,9 @@
                 </tr>
             @endforeach
         </table>
+        <div style="text-align: center">
+            <a href="/myprize"><button class="btn-long">我的奖品</button></a>
+        </div>
     </dl>
     <div class="close" id="close-exBox" ><img src="/Images/ok.png" /></div>
 </div>
