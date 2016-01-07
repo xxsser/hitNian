@@ -44,7 +44,14 @@ class ShareController extends Controller
                         'parent_id' =>  $parentid,
                     ]);
                     //给分享用户奖励50金币
-                    DB::table('gamedatas')->increment('coins',config('customs.shareCoin'));
+                    if(DB::table('gamedatas')->where('fan_id',$parentid)->count()){
+                        DB::table('gamedatas')->increment('coins',config('customs.shareCoin'));
+                    }else{
+                        DB::table('gamedatas')->insert([
+                            'fan_id'    =>  $parentid,
+                            'coins'     =>  config('customs.shareCoin'),
+                        ]);
+                    }
                     DB::commit();
                 }catch(Exception $e) {
                     DB::rollback();
