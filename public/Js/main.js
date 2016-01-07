@@ -1,68 +1,3 @@
-var SHAKE_THRESHOLD = 3000;
-var last_update = 0;
-var x, y, z, last_x, last_y, last_z;
-var last_time = 0;
-var media;
-
-function init(){
-    last_update=new Date().getTime();
-    media= document.getElementById("musicBox");
-    if (window.DeviceMotionEvent) {
-        window.addEventListener('devicemotion',deviceMotionHandler, false);
-    } else{
-        alert('not support mobile event');
-    }
-}
-function deviceMotionHandler(eventData) {
-    var acceleration =eventData.accelerationIncludingGravity;
-    var curTime = new Date().getTime();
-    if ((curTime - last_update)> 100) {
-        var diffTime = curTime -last_update;
-        last_update = curTime;
-        x = acceleration.x;
-        y = acceleration.y;
-        z = acceleration.z;
-        var speed = Math.abs(x +y + z - last_x - last_y - last_z) / diffTime * 10000;
-        if (speed > SHAKE_THRESHOLD) {
-            if ((last_time != 0 && (curTime - last_time < 3000))) {
-                return;
-            }
-            if(!media.src){
-                media.src="Sound/shake.mp3";
-            }
-            media.play();
-            last_time = curTime;
-            $.post('/attack',{'fid': $('#fid').val()},function(data){
-                switch (data.state){
-                    case 'success' :
-                        var str = '恭喜:您对年兽造成'+data.damage+'点伤害!';
-                        if(data.coins){
-                            str += '<br/>年兽掉落了<b>'+data.coins+'</b>个金币!';
-                        }
-                        var count = $('#attackNum').text();
-                        $('#attackNum').text(count-1);
-                        $('#alertext').html(str);
-                        $('#box').show();
-                        //alert(str)
-                        break;
-                    case 'over' :
-                        if(data.isShare == 'no'){
-                            $('#share').show();
-                        }else{
-                            $('#alertext').text('今天攻击次数用完啦，记得明天再来');
-                            $('#box').show();
-                        }
-                        break;
-                    default :
-                        alert('请检查网络，重试');
-                }
-            });
-        }
-        last_x = x;
-        last_y = y;
-        last_z = z;
-    }
-}
 $(function(){
     $.ajaxSetup({
         headers: {
@@ -159,6 +94,25 @@ $(function(){
     $("#ok").click(function(){
         $(this).parent().hide();
     });
-
-
-})
+});
+//设置分享内容
+function setShare(trend){
+    return {
+        title: '每天摇一摇，摇出年兽大礼包', // 分享标题
+        desc: '动动手腕，攻击年兽有奖品，更有iphone62等豪礼等着你，年兽大战等你来!', // 分享描述
+        link: 'http://hdwyc.3pdj.com/sharelink/'+$('#fid').val(), // 分享链接
+        imgUrl: 'http://hdwyc.3pdj.com/Images/fx.jpg', // 分享图标
+        type: 'link', // 分享类型,music、video或link，不填默认为link
+        dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+        success: function () {
+            // 用户确认分享后执行的回调函数
+            $.post('/share',{'fid':$('#fid').val(),'shared':trend},function(data){
+                if(data.state == 'success'){
+                    var count = $('#attackNum').text();
+                    $('#attackNum').text(count+1);
+                    $('#share').hide();
+                }
+            });
+        }, cancel: function () {}
+    }
+}
