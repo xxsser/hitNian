@@ -31,5 +31,6 @@ class CreateExchangesTable extends Migration
     public function down()
     {
         //
+        Schema::drop('exchange');
     }
 }

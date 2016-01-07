@@ -28,5 +28,6 @@ class CreateSharesTable extends Migration
     public function down()
     {
         //
+        Schema::drop('shares');
     }
 }

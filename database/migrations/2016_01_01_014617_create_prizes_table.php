@@ -43,5 +43,6 @@ class CreatePrizesTable extends Migration
     public function down()
     {
         //
+        Schema::drop('prizes');
     }
 }

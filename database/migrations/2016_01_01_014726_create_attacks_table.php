@@ -29,5 +29,6 @@ class CreateAttacksTable extends Migration
     public function down()
     {
         //
+        Schema::drop('attacks');
     }
 }

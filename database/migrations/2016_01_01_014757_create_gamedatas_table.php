@@ -15,8 +15,8 @@ class CreateGamedatasTable extends Migration
         Schema::create('gamedatas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('fan_id')->unsigned();
-            $table->integer('damages')->unsigned();
-            $table->integer('coins')->unsigned();
+            $table->integer('damages')->unsigned()->default('0');
+            $table->integer('coins')->unsigned()->default('0');
             $table->timestamps();
         });
     }
@@ -29,5 +29,6 @@ class CreateGamedatasTable extends Migration
     public function down()
     {
         //
+        Schema::drop('gamedatas');
     }
 }

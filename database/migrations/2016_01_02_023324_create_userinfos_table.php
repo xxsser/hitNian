@@ -31,5 +31,6 @@ class CreateUserinfosTable extends Migration
     public function down()
     {
         //
+        Schema::drop('userinfos');
     }
 }

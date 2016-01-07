@@ -29,5 +29,6 @@ class CreateFansTable extends Migration
     public function down()
     {
         //
+        Schema::drop('fans');
     }
 }
