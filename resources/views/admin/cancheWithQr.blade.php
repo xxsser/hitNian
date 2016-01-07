@@ -9,14 +9,19 @@
                 <div class="panel-heading">奖品列表</div>
                 <div class="panel-body">
                     <ul>
-                        @foreach( $prizes as $prize)
-                            <li>{{ $prize['name'] }}</li>
-                        @endforeach
-                        <hr>
-                        <li>代金劵总金额:{{ $countMoney }} 元</li>
+                        @if($prizes)
+                            @foreach( $prizes as $prize)
+                                <li>{{ $prize['name'] }}</li>
+                            @endforeach
+                            <hr>
+                            <li>代金劵总金额:{{ $countMoney }} 元</li>
+                        @else
+                            <li>该用户没有奖品可兑换</li>
+                        @endif
                     </ul>
                 </div>
             </div>
+            @if($prizes)
             <div class="panel panel-default">
                 <div class="panel-heading">填写信息</div>
                 <div class="panel-body">
@@ -52,6 +57,7 @@
                     </form>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </div>
