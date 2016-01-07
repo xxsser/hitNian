@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     <form class="form-horizontal" id="form-canche">
                         <div class="form-group">
-                            <label class="col-lg-4 control-label">核销码</label>
+                            <label class="col-lg-4 control-label">用户核销码</label>
                             <div class="col-lg-6">
                                 <input type="tel" class="form-control" id="code" value="" />
                             </div>
