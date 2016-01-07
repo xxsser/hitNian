@@ -8,38 +8,16 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>年兽大战,稀有宝物随机爆</title>
     <link rel="stylesheet" href="/Css/style.css" />
-    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="/Js/jquery.min.js"></script>
     <script type="text/javascript" src="Js/main.js?v=1.1"></script>
     <script type="text/javascript" src="/Js/jQueryRotateCompressed.js"></script>
     <script type="text/javascript" src="/Js/jquery-jrumble.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script type="text/javascript">
         wx.config({!! $js->config(['onMenuShareTimeline','onMenuShareAppMessage']) !!});
         wx.ready(function(){
-            var share = {
-                title: '每天摇一摇，摇出年兽大礼包', // 分享标题
-                desc: '动动手腕，攻击年兽有奖品，更有iphone62等豪礼等着你，年兽大战等你来!', // 分享描述
-                link: 'http://hdwyc.3pdj.com/sharelink/'+$('#fid').val(), // 分享链接
-                imgUrl: 'http://hdwyc.3pdj.com/Images/fx.jpg', // 分享图标
-                type: 'link', // 分享类型,music、video或link，不填默认为link
-                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-                success: function () {
-                    // 用户确认分享后执行的回调函数
-                    $.post('/share',{'fid':$('#fid').val(),'shared':'moment'},function(data){
-                        if(data.state == 'success'){
-                            var count = $('#attackNum').text();
-                            $('#attackNum').text(count+1);
-                            $('#share').hide();
-                        }
-                    });
-                },
-                cancel: function () {
-                    // 用户取消分享后执行的回调函数
-                }
-            }
-            wx.onMenuShareTimeline(share);
-            //“分享给朋友”按钮点击状态及自定义分享内容接口
-            wx.onMenuShareAppMessage(share);
+            wx.onMenuShareTimeline(setShare('moment'));
+            wx.onMenuShareAppMessage(setShare('friend'));
         });
     </script>
 </head>
