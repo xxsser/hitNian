@@ -59,6 +59,7 @@ img{max-width:100%;}
     .alert .btn {top:50%;}
 }
 .btn-long{background: #F3545D;color: #FFFFFF;border-radius: 10px;border: 2px solid white;padding: 5px;font-size: 10px;font-weight: bold;margin-top: 10px;width: 80%}
+.btn-short{background: #eaf2d3;color: #554cd0;border: 1px solid white;border-radius: 3px;padding: 3px}
 #customers {  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;  width:100%;  border-collapse:collapse;  }
 #customers td, #customers th {  font-size:1em;  border:1px solid #e6c7e8;  padding:3px 7px 2px 7px;  }
 #customers th {  font-size:1.1em;  padding-top:5px;  padding-bottom:4px;  background-color: #ea7568;  color:#ffffff;  }
