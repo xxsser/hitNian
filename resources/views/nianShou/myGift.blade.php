@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <title>万悦城</title>
+    <title>万悦城 - 奖品中心</title>
 </head>
 <style>
     *{margin:0; padding:0; -webkit-tap-highlight-color:rgba(0,0,0,0);}
@@ -21,7 +21,7 @@
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <body>
 <br>
-<div style="width:100%;margin-bottom:2%;color:#FFF;font-weight:bold;font-size:1.2em;text-align:center;padding-top:55%;">奖品</div>
+<div style="width:100%;margin-bottom:2%;color:#FFF;font-weight:bold;font-size:1.2em;text-align:center;padding-top:55%;">我的奖品</div>
 <div style="width:84%;margin:0 auto;background:#c3406a;padding:1%;font-size:1em;">
     <ul class="giftlist">
         @if(empty($gifts))
