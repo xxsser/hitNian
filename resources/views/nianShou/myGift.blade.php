@@ -21,14 +21,9 @@
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <body>
 <br>
-<!-- <div style="width:100%;margin-bottom:2%;color:#FFF;font-weight:bold;font-size:1.2em;text-align:center;padding-top:55%;">(实物奖|现金奖)</div> -->
 <div style="width:100%;margin-bottom:2%;color:#FFF;font-weight:bold;font-size:1.2em;text-align:center;padding-top:55%;">奖品</div>
 <div style="width:84%;margin:0 auto;background:#c3406a;padding:1%;font-size:1em;">
     <ul class="giftlist">
-        {{--<li>
-            <div>您共有10元现金券</div>
-        </li>
-        <hr>--}}
         @if(empty($gifts))
             <li>
                 <div>您还没有奖品，快去击打年兽拿奖品吧！</div>
@@ -36,12 +31,12 @@
         @else
             @foreach($gifts as $k=>$v)
                 <li>
-                    <div>{{ 10000+$v['id'] }}	{{ $v['created_at'] }}<br/>{{ $v['prize']['name'] }}</div>
+                    <div> {{ $v['created_at'] }}<br/>{{ $v['prize']['name'] }}</div>
                 </li>
                 <hr>
             @endforeach
                 <li>
-                    <div>请在兑奖时出示该二维码</div>
+                    <div>您的兑奖码ID: {{ $user['fid'] }}<br/>请在兑奖时出示该二维码</div>
                     <div style="text-align: center;">
                         <img src="http://qr.topscan.com/api.php?text={{ url('/ExpiryId',Session::get('logged_user')['fid']) }}" />
                     </div>
@@ -50,7 +45,6 @@
     </ul>
     <div style="clear:both;"></div>
 </div>
-<!-- <div style="width:60%;margin:5% auto 3%;text-align:center;"><img src="/2015/wyc/Uploads/Core/oNOTGjiLVI8LiX4Pg-xCV3wfcfWM.png" /></div> -->
 <br>
 <div style="text-align:center;width:100%;margin-top:1%;"><a href="http://www.029qq.net/2015/10/wych/"><img src="images/lianjie.png" style="width:50%;" /></a></div>
 <div style="text-align:center;width:100%;margin-top:1%;"><img src="images/logo.png" style="width:30%;" /></div>
