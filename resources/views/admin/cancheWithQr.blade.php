@@ -37,7 +37,7 @@
                         <div class="form-group control-group">
                             <label class="col-md-4 control-label">电话</label>
                             <div class="col-md-6">
-                                <input type="phone" class="form-control" id="phone" value="" />
+                                <input type="tel" class="form-control" id="phone" value="" />
                             </div>
                         </div>
 
