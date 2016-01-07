@@ -26,8 +26,8 @@ img{max-width:100%;}
 .gameDataBox {  text-align:right;margin:3% 0 10%  }
 .gameDataBox .imgLeft {width:50%;position:absolute; top: 0px;left: 10px}
 .gameDataBox .imgRight {width:50%;position:absolute; top: 0px;right: 10px}
-.gameDataBox .numLeft{color: white; position: absolute; top: 0px;left: 0px;margin-top: 6.5%;margin-left: 20%;font-size: 20px;font-weight: bold;}
-.gameDataBox .numRight{color: white; position: absolute; top: 0px;right: 0px;margin-top: 6.5%;margin-right: 22%;font-size: 20px;font-weight: bold;}
+.gameDataBox .numLeft{color: white; position: absolute; top: 0px;left: 0px;margin-top: 6.5%;margin-left: 23%;font-size: 5vw;font-weight: bold;}
+.gameDataBox .numRight{color: white; position: absolute; top: 0px;right: 0px;margin-top: 6.5%;margin-right: 25%;font-size: 5vw;font-weight: bold;}
 
 .gameButton{width:100%;color:#FFF;font-size:0.8em;text-align:center;line-height:1.5em;margin-top:2%;}
 .gameButton .btnLeft{width:55%;position: absolute; left: 2%}
@@ -57,9 +57,8 @@ img{max-width:100%;}
 @media all and (max-width:320px){
     .nian {width:60%;}
     .alert .btn {top:50%;}
-    .gameDataBox .numLeft{margin-left: 23%;}
-    .gameDataBox .numRight{margin-right: 25%;}
 }
+.btn-long{background: #F3545D;color: #FFFFFF;border-radius: 10px;border: 2px solid white;padding: 5px;font-size: 10px;font-weight: bold;margin-top: 10px;width: 80%}
 #customers {  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;  width:100%;  border-collapse:collapse;  }
 #customers td, #customers th {  font-size:1em;  border:1px solid #e6c7e8;  padding:3px 7px 2px 7px;  }
 #customers th {  font-size:1.1em;  padding-top:5px;  padding-bottom:4px;  background-color: #ea7568;  color:#ffffff;  }
