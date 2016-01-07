@@ -82,14 +82,12 @@ class AdminController extends Controller
      * 二维码核销页面
      * */
     public function cancheWithQr($fid){
-        $userPrizes =  \App\Http\Controllers\IndexController::getFanPrizes($fid);
+        $userPrizes =  \App\Http\Controllers\PrizeController::getFanPrizes($fid);
         $prizes = array();
         $countMoney = 0;
         foreach($userPrizes as $k=>$v){
             array_push($prizes,$v['prize']);
-            if($v['prize']['rank'] == 4){
-                $countMoney += intval($v['prize']['name']);
-            }
+            $countMoney += intval($v['prize']['name']);
             asort($prizes);
         }
         return view('admin.cancheWithQr',compact('prizes','countMoney','fid'));
@@ -108,7 +106,7 @@ class AdminController extends Controller
             'phone' => 'regex:/^1[34578][0-9]{9}$/',
         ], [], $attributes);
         if($request->input('key') == 888){
-            $up = \App\Attack::where(['fan_id'=>$request->input('fid'),'isget'=>0])->update(['isget'=>1]);
+            $up = \App\Exchange::where(['fan_id'=>$request->input('fid'),'isget'=>0])->update(['isget'=>1]);
             if($up > 0 ){
                 if($request->input('phone') != ''){
                     self::saveUserInfo($request->input('fid'),$request->input('phone'),$request->input('name'));
