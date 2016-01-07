@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Http\Requests;
+use Mockery\CountValidator\Exception;
 use Session;
 use DB;
 class ShareController extends Controller
@@ -21,22 +22,34 @@ class ShareController extends Controller
     }
 
     //用户分享链接验证跳转
-    public function shareLink($fid) {
+    public function shareLink($parentid) {
         //检查session是否有fid
-        if(Session::has('logged_user')){
-            //return redirect('/');
-        }
-        //获取用户openid
-        $wechat = new \App\Http\Controllers\WeAuthController();
-        $user = $wechat->wechatAuth();
-        //查询是否有该用户
-        if(empty(\App\Fan::where('openid',$user->openid)->first()) && \App\Fan::find($fid)){
-            DB::beginTransation();
-            //保存用户信息
-
-            //给分享用户奖励50金币
-
-            //跳转到游戏首页
+        if(!Session::has('logged_user')){
+            //获取用户openid
+            $wechat = new \App\Http\Controllers\WeAuthController();
+            $user = $wechat->wechatAuth();
+            //查询是否有该用户
+            if(empty(\App\Fan::where('openid',$user->openid)->first()) && \App\Fan::find($parentid)){
+                DB::beginTransaction();
+                try{
+                    //保存用户信息 获取新用户ID
+                    $user_id = DB::table('fans')->insertGetId([
+                        'nikename'  =>  $user->nickname,
+                        'openid'    =>  $user->openid,
+                        'sex'       =>  $user->sex,
+                    ]);
+                    //保存用户关系到关系表
+                    DB::table('recommends')->insert([
+                        'fan_id'    =>  $user_id,
+                        'parent_id' =>  $parentid,
+                    ]);
+                    //给分享用户奖励50金币
+                    DB::table('gamedatas')->increment('coins',config('customs.shareCoin'));
+                    DB::commit();
+                }catch(Exception $e) {
+                    DB::rollback();
+                }
+            }
         }
         return redirect('/');
     }
