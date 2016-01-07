@@ -7,30 +7,31 @@ $(function(){
     //兑换按钮
     $('#exprize').click(function(){
         $('#exBox').show();
-        $('.exchange').click(function(){
-            if(confirm('确定要兑换吗?')){
-                $.post('/exprize/exchange',{pid:$(this).val()},function(data){
-                    switch (data.state){
-                        case 'success' :
-                            $('#alertext').text('恭喜，兑换成功！');
-                            break;
-                        case 'coin_lack' :
-                            $('#alertext').text('您的金币不足');
-                            break;
-                        case 'noAuth' :
-                            $('#alertext').text('您还没有登陆');
-                            break;
-                        default :
-                            $('#alertext').text('null');
-                    }
-                    $('#box').show();
-                })
-            }
-        });
-        $('#close-exBox').click(function(){
-            $(this).parent().hide();
-        });
     });
+    $('.exchange').click(function(){
+        if(confirm('确定要兑换吗?')){
+            $.post('/exprize/exchange',{pid:$(this).val()},function(data){
+                switch (data.state){
+                    case 'success' :
+                        $('#alertext').text('恭喜，兑换成功！');
+                        break;
+                    case 'coin_lack' :
+                        $('#alertext').text('您的金币不足');
+                        break;
+                    case 'noAuth' :
+                        $('#alertext').text('您还没有登陆');
+                        break;
+                    default :
+                        $('#alertext').text('null');
+                }
+                $('#box').show();
+            })
+        }
+    });
+    $('#close-exBox').click(function(){
+        $(this).parent().hide();
+    });
+
     //攻击按钮
     $('#attack').click(function(){
         $.post('/attack',{'fid': $('#fid').val()},function(data){
