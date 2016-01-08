@@ -1,3 +1,4 @@
+var blag = true;
 $(function(){
     $.ajaxSetup({
         headers: {
@@ -31,68 +32,79 @@ $(function(){
     $('#close-exBox').click(function(){
         $(this).parent().hide();
     });
-
     //攻击按钮
     $('#attack').click(function(){
-        $.post('/attack',{'fid': $('#fid').val()},function(data){
-            switch (data.state){
-                case 'success' :
-                    $(".chuizi-box").show()
-                    $("#chuizi").rotate({
-                        duration:1000,
-                        angle: 0,
-                        center: ["0%", "100%"],
-                        animateTo:25,
-                        callback: function(){
-                            //年兽效果
-                            $('#nianshou').css({
-                                '-webkit-animation-name':'nianAttack',
-                                '-webkit-animation-duration':'1s'
-                            });
-                            var damages = parseInt($('#damages').text());
-                            $('#damages').text(damages + parseInt(data.damage));
-                            var str = '恭喜:您对年兽造成'+data.damage+'点伤害!';
-                            if(data.coins){
-                                //金币效果
-                                $('.coin-box').show();
-                                setTimeout(function(){
-                                    $('.coin-box').hide();
-                                },3000)
-                                var coins = parseInt($('#coins').text());
-                                $('#coins').text(coins+parseInt(data.coins));
-                                str += '<br/>年兽掉落了<b>'+data.coins+'</b>个金币!';
-                            }
-                            var count = parseInt($('#attackNum').text());
-                            $('#attackNum').text(count-1);
-                            $('#alertext').html(str);
-
-                            setTimeout(function(){
+        if(blag == false){
+            return;
+        }
+        blag = false;
+        $.ajax({
+            url: "/attack",
+            data:{fid: $('#fid').val()},
+            type: "POST",
+            dataType:'json',
+            success:function(data){
+                switch (data.state){
+                    case 'success' :
+                        $(".chuizi-box").show()
+                        $("#chuizi").rotate({
+                            duration:1000,
+                            angle: 0,
+                            center: ["0%", "100%"],
+                            animateTo:25,
+                            callback: function(){
+                                //年兽效果
                                 $('#nianshou').css({
-                                    '-webkit-animation-name':'nianNormen',
-                                    '-webkit-animation-duration':'8s'
+                                    '-webkit-animation-name':'nianAttack',
+                                    '-webkit-animation-duration':'1s'
                                 });
-                                //隐藏锤子
-                                $(".chuizi-box").hide();
-                                //显示数据
-                                $('#box').show();
-                            },1000);
+                                var damages = parseInt($('#damages').text());
+                                $('#damages').text(damages + parseInt(data.damage));
+                                var str = '恭喜:您对年兽造成'+data.damage+'点伤害!';
+                                if(data.coins){
+                                    //金币效果
+                                    $('.coin-box').show();
+                                    setTimeout(function(){
+                                        $('.coin-box').hide();
+                                    },3000)
+                                    var coins = parseInt($('#coins').text());
+                                    $('#coins').text(coins+parseInt(data.coins));
+                                    str += '<br/>年兽掉落了<b>'+data.coins+'</b>个金币!';
+                                }
+                                var count = parseInt($('#attackNum').text());
+                                $('#attackNum').text(count-1);
+                                $('#alertext').html(str);
+
+                                setTimeout(function(){
+                                    $('#nianshou').css({
+                                        '-webkit-animation-name':'nianNormen',
+                                        '-webkit-animation-duration':'8s'
+                                    });
+                                    //隐藏锤子
+                                    $(".chuizi-box").hide();
+                                    //显示数据
+                                    $('#box').show();
+                                },1000);
+                            }
+                        });
+                        break;
+                    case 'over' :
+                        if(data.isShare == 'no'){
+                            $('#share').show();
+                            return;
+                        }else{
+                            $('#alertext').text('今天攻击次数用完啦，记得明天再来');
+                            $('#box').show();
                         }
-                    });
-                    break;
-                case 'over' :
-                    if(data.isShare == 'no'){
-                        $('#share').show();
-                        return;
-                    }else{
-                        $('#alertext').text('今天攻击次数用完啦，记得明天再来');
-                        $('#box').show();
-                    }
-                    break;
-                default :
-                    $('#alertext').text('请检查网络，重试');
-                    $('#box').show();
+                        break;
+                }
+            },
+            error:function(){
+                $('#alertext').text('请检查网络，重试');
+                $('#box').show();
             }
         });
+        setTimeout(function(){blag = true;},3000);
     });
     $("#ok").click(function(){
         $(this).parent().hide();
