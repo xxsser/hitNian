@@ -8,7 +8,7 @@
     <title>年兽大战,稀有宝物随机爆</title>
     <style>
         *{margin:0; padding:0; -webkit-tap-highlight-color:rgba(0,0,0,0);}
-        body{background-image:url(../Images/startbak.jpg); background-repeat:no-repeat; background-size:100%; background-color: #e83833; background-position:left top;}
+        body{background-image:url(../Images/startbak.jpg); background-repeat:no-repeat; background-size:100%; background-color: #e04e46; background-position:left top;}
         img{max-width:100%;}
         #hear2{width:60%; margin-top:22%; -webkit-animation-name:myfirst2; -webkit-animation-duration:5s; -webkit-animation-play-state:running; -webkit-animation-iteration-count:infinite;}
         #ranking,#explain{width:70%; position:absolute; top:20%; left:10%; display:none; z-index:999;  padding:5%; background:url(/Images/box.png); background-repeat:no-repeat; background-size:100%;}
@@ -19,7 +19,7 @@
         }
         #p2{width:90%;}
         #butt{width:100%;position:relative;}
-        #m1{position:absolute;top:20%;left:5%;color:#FFF;font-size:0.7em;width:30%;background: black;opacity: 0.7;border-radius: 10px;padding: 5px;text-align: center}
+        #m1{position:absolute;top:20%;left:5%;color:#FFF;font-size:0.7em;width:35%;background: black;opacity: 0.7;border-top-left-radius: 20px;border-bottom-right-radius:20px; padding: 5px;text-align: center}
         @media all and (max-width:320px){ #hear2{width:60%;}
             #butt{width:88%;}
             #p2{width:80%;}
@@ -83,7 +83,7 @@
 <div  id="guize" style="position: absolute; right: 0px;top: 3%;">
     <img src="/Images/yxgz.png" style="width: 80%"/>
 </div>
-<div id="m1">当前参与人数{{ $userNum }}人<br />距活动结束还有{{ \Carbon\Carbon::create(2016,2,8)->diffInDays() }}天</div>
+<div id="m1">当前参与人数{{ $userNum }}人<br />活动剩余{{ \Carbon\Carbon::create(2016,2,8)->diffInDays() }}天</div>
 <div id="p1">
     <div style="text-align:center;margin-top: 20%">
         <img src="/Images/shou.png" id="hear2" />
