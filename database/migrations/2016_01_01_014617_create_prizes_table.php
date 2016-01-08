@@ -30,7 +30,7 @@ class CreatePrizesTable extends Migration
             $table->string('name');                             //奖品名称
             $table->integer('num')->unsigned();                 //奖品剩余
             $table->integer('coin')->unsigned()->default('0');  //需要金币数量
-            $table->enum('type',['exchange','rank']);           //奖品类型(掉落，排名)
+            $table->enum('type',['money','gift','rank']);           //奖品类型(现金，实物，排名)
             $table->timestamps();
         });
     }
