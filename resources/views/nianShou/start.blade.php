@@ -8,7 +8,7 @@
     <title>年兽大战,稀有宝物随机爆</title>
     <style>
         *{margin:0; padding:0; -webkit-tap-highlight-color:rgba(0,0,0,0);}
-        body{background-image:url(../Images/startbak.jpg); background-repeat:no-repeat; background-size:100%; background-color: #e04e46; background-position:left top;}
+        body{background-image:url(../Images/startbak.jpg); background-repeat:no-repeat; background-size:100%; background-color: #e83833; background-position:left top;}
         img{max-width:100%;}
         #hear2{width:60%; margin-top:22%; -webkit-animation-name:myfirst2; -webkit-animation-duration:5s; -webkit-animation-play-state:running; -webkit-animation-iteration-count:infinite;}
         #ranking,#explain{width:70%; position:absolute; top:20%; left:10%; display:none; z-index:999;  padding:5%; background:url(/Images/box.png); background-repeat:no-repeat; background-size:100%;}
@@ -19,7 +19,7 @@
         }
         #p2{width:90%;}
         #butt{width:100%;position:relative;}
-        #m1{position:absolute;top:25%;left:5%;color:#FFF;font-size:0.7em;font-weight:bold;width:50%;}
+        #m1{position:absolute;top:20%;left:5%;color:#FFF;font-size:0.7em;width:30%;background: black;opacity: 0.7;border-radius: 10px;padding: 5px;text-align: center}
         @media all and (max-width:320px){ #hear2{width:60%;}
             #butt{width:88%;}
             #p2{width:80%;}
@@ -29,7 +29,7 @@
         #customers th {  font-size:1.1em;  padding-top:5px;  padding-bottom:4px;  background-color: #ea7568;  color:#ffffff;  }
         #customers tr.alt td {  color:#000000;  background-color: #f26d80;  opacity: 0.5;  }
     </style>
-    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/Js/jquery.min.js"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script type="text/javascript">
         wx.config({!! $js->config(['onMenuShareTimeline','onMenuShareAppMessage']) !!});
@@ -133,10 +133,10 @@
 <div id="explain" style="height: 50%">
     <dl style="font-size:0.8em;color:#FFF; font-weight: bold; line-height:1.8em;height: 65%;overflow-y:auto;">
         <dd>1.每人每天可以攻击年兽两次。将页面分享给好友或者朋友圈可以增加一次攻击机会。</dd>
-        <dd>2.每次攻击年兽将随机掉落金币，每次攻击金币和伤害值予以累加。</dd>
+        <dd>2.每次攻击年兽将随机掉落金币，每次攻击金币<img src="/Images/coin.png" style="width: 25%" />和伤害值<img src="/Images/shanghai.png" style="width: 25%" />予以累加。</dd>
         <dd>3.好友点击通过您的分享首次进入游戏，可获赠50金币。</dd>
         <dd>4.金币可在游戏中兑换礼品。</dd>
-        <dd>5.伤害值排名5分钟刷新一次，最终排名以活动结束时为准。</dd>
+        <dd>5.英雄榜伤害排名5分钟刷新一次，最终排名以活动结束时为准。</dd>
         <hr>
         <dd>1.现金券累计满50元以上，一周内未兑换，自动清零。</dd>
         <dd>2.实物奖累计满200元以上，一周内未兑换，自动清零</dd>
