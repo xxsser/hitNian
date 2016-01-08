@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use DB;
 
 class AdminController extends Controller
 {
@@ -32,13 +34,21 @@ class AdminController extends Controller
      * */
     public function cancheWithQr($fid){
         $userPrizes =  \App\Http\Controllers\PrizeController::getFanPrizes($fid);
-        $prizes = array();
+        $money = array();
+        $gift = array();
         $countMoney = 0;
         foreach($userPrizes as $k=>$v){
-            array_push($prizes,$v['prize']);
-            $countMoney += intval($v['prize']['name']);
-            asort($prizes);
+            switch($v['prize']['type']) {
+                case 'money' :
+                    array_push($money,$v['prize']['name']);
+                    $countMoney += intval($v['prize']['name']);
+                    break;
+                case 'gift' :
+                    array_push($gift,$v['prize']['name']);
+                    break;
+            }
         }
+        $prizes = ['money'=>$money,'gift'=>$gift];
         return view('admin.cancheWithQr',compact('prizes','countMoney','fid'));
     }
 
@@ -53,9 +63,13 @@ class AdminController extends Controller
         $this->validate($request, [
             'fid'   => 'required|integer',
             'phone' => 'regex:/^1[34578][0-9]{9}$/',
+            'type'  => 'required|in:money,gift',
         ], [], $attributes);
         if($request->input('key') == 888){
-            $up = \App\Exchange::where(['fan_id'=>$request->input('fid'),'isget'=>0])->update(['isget'=>1]);
+            $up = DB::table('exchanges')->leftJoin('prizes' , 'exchanges.prize_id', '=' ,'prizes.id')
+                ->where(['exchanges.fan_id'=>$request->input('fid'),'prizes.type'=>$request->input('type')])
+                ->update(['exchanges.isget'=>1,'exchanges.updated_at'=>Carbon::now()]);
+            //$up = \App\Exchange::where(['fan_id'=>$request->input('fid'),'type'=>$request->input('type')])->unget()->update(['isget'=>1]);
             if($up > 0 ){
                 if($request->input('phone') != ''){
                     self::saveUserInfo($request->input('fid'),$request->input('phone'),$request->input('name'));
