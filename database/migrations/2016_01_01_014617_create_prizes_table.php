@@ -33,6 +33,7 @@ class CreatePrizesTable extends Migration
             $table->enum('type',['money','gift','rank']);           //奖品类型(现金，实物，排名)
             $table->timestamps();
         });
+
     }
 
     /**
