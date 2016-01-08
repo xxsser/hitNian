@@ -83,7 +83,7 @@
 <div class="alert" id="box">
     <img src="/Images/t.png" />
     <div id="alertext" class="text">您今天的机会已用完，明天再来哦~</div>
-    <img src="/Images/ok.png" class="btn" class="close" />
+    <img src="/Images/ok.png" class="btn close" />
 </div>
 <div class="gift-list">
     <img src="images/jpnr.png" />
