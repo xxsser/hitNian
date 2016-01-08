@@ -71,18 +71,25 @@
                 </tr>
             @endforeach
         </table>
-        <div style="text-align: center">
-            <a href="/myprize"><button class="btn-long">我的奖品</button></a>
-        </div>
     </dl>
     <div class="close" id="close-exBox" ><img src="/Images/ok.png" /></div>
+    <div class="center">
+        <button class="btn-long" id="gift-list-btn">查看所有奖品</button>
+    </div>
+    <div class="center">
+        <a href="/myprize"><button class="btn-long">我的奖品</button></a>
+    </div>
 </div>
 <div class="alert" id="box">
     <img src="/Images/t.png" />
     <div id="alertext" class="text">您今天的机会已用完，明天再来哦~</div>
-    <img src="/Images/ok.png" class="btn" id="ok" />
+    <img src="/Images/ok.png" class="btn" class="close" />
 </div>
-<audio id="audio" width="0" height="0"><source src="sound/5018.wav" /></audio>
+<div class="gift-list">
+    <img src="images/jpnr.png" />
+    <img src="images/3.png" class="back close" />
+</div>
+{{--<audio id="audio" width="0" height="0"><source src="sound/5018.wav" /></audio>--}}
 <div hidden>
     {{--<audio id="musicBox" controls="controls">
         <source src="Sound/shake.mp3" type="audio/mp3">

@@ -106,8 +106,12 @@ $(function(){
         });
         setTimeout(function(){blag = true;},3000);
     });
-    $("#ok").click(function(){
+    $(".close").click(function(){
         $(this).parent().hide();
+    });
+    $('#gift-list-btn').click(function(){
+        $(this).parent().parent().hide();
+        $('.gift-list').show();
     });
 });
 //设置分享内容

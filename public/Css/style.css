@@ -41,9 +41,10 @@ img{max-width:100%;}
 .alert .text {position:absolute;top:5%;color:#FFF;font-size:20px;width:100%;}
 .alert .btn {width:20%;position:absolute;left:40%;top:13%;}
 
-.exchange-box{width:74%; position:absolute; top:20%; left:10%; display:none; z-index:900;  padding:3%; background:url(/Images/box.png); background-repeat:no-repeat; background-size:100%;}
+.exchange-box {width:74%;height: 50%; position:absolute; top:20%; left:10%; display:none; z-index:900;  padding:3%; background:url(/Images/box.png); background-repeat:no-repeat; background-size:100%;}
+.exchange-box dl {height: 68%;font-size:0.8em;color:#FFF; line-height:1.8em;overflow-y:auto;text-align: center;list-style:none}
 .exchange-box .close {width:100%;text-align:center;margin-top:2%}
-.exchange-box dl{font-size:0.8em;color:#FFF; line-height:1.8em;height:255px;overflow-y:auto;text-align: center;list-style:none}
+.exchange-box .close img {width:30%;}
 
 .chuizi-box {position: absolute;top:0px; left: 0px; z-index: 900;margin-top: 20%;margin-left: -8%; display: none}
 .chuizi-box img{width: 55%;}
@@ -58,8 +59,10 @@ img{max-width:100%;}
     .nian {width:60%;}
     .alert .btn {top:50%;}
 }
-.btn-long{background: #F3545D;color: #FFFFFF;border-radius: 10px;border: 2px solid white;padding: 5px;font-size: 10px;font-weight: bold;margin-top: 10px;width: 80%}
+.btn-long{background: #F3545D;color: #FFFFFF;border-radius: 10px;border: 2px solid white;padding: 5px;font-size: 5vw;font-weight: bold;margin-top: 10px;width: 100%;height: 40px}
 .btn-short{background: #eaf2d3;color: #554cd0;border: 1px solid white;border-radius: 3px;padding: 3px}
+.gift-list {margin:30% 5% auto;position:absolute; display:none;width:90%; top: 0px;left: 0px;z-index: 1000}
+.gift-list .back {width:24%;position:absolute;top:110%;left:38%;}
 #customers {  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;  width:100%;  border-collapse:collapse;  }
 #customers td, #customers th {  font-size:1em;  border:1px solid #e6c7e8;  padding:3px 7px 2px 7px;  }
 #customers th {  font-size:1.1em;  padding-top:5px;  padding-bottom:4px;  background-color: #ea7568;  color:#ffffff;  }
