@@ -36,11 +36,15 @@ class PrizeController extends Controller
         //处理数据
         DB::beginTransaction();
         try {
+            //添加兑换记录
             DB::table('exchanges')->insert([
                 'fan_id'    =>  $fid,
                 'prize_id'  =>  $request->input('pid'),
             ]);
+            //扣除用户金币
             DB::table('gamedatas')->where('fan_id',$fid)->decrement('coins',$giftInfo->coin);
+            //消减库存
+            DB::table('prizes')->where('id',$request->input('pid'))->decrement('num');
             DB::commit();
         }catch(Exception $e) {
             DB::rollback();
@@ -60,7 +64,7 @@ class PrizeController extends Controller
     //获取用户奖品查询
     public static function getFanPrizes($fid){
         $prizes = \App\Exchange::with(['prize'=>function($query){
-            $query->select('id','name','rank');
+            $query->select('id','name','rank','type');
         }])->select('id','prize_id','created_at')
             ->where('fan_id',$fid)->unget()->get();
         return $prizes->toArray();

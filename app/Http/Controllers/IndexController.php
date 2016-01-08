@@ -32,7 +32,7 @@ class IndexController extends Controller
             'js'        =>  $this->wechat->jsSet(),
             'attackNum' =>  \App\Http\Controllers\AttackController::getAttackCount($this->user['fid']),
             'userData'  =>  \App\Gamedata::where('fan_id',$this->user['fid'])->first(),
-            'gifts'  =>     \App\Prize::Exchange()->select('id','name','coin')->get(),
+            'gifts'  =>     \App\Prize::Exchange()->select('id','name','coin')->orderBy('coin')->get(),
         ]);
     }
 
