@@ -119,7 +119,7 @@
                     return;
                 }
                 $.ajax({
-                    url: "/admin/canche_fid",
+                    url: "admin/canche_fid",
                     method: 'POST',
                     data: {fid: $("#fid").val(),name: $("#name").val(),phone: $("#phone").val(),key:$('#key').val(),type:$('input:radio[name=type]:checked').val()},
                     success: function(data) {

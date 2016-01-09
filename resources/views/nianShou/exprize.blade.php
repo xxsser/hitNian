@@ -7,8 +7,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>奖品兑换中心</title>
     <!-- Fonts -->
-    <link href="/Css/font-awesome.min.css" rel='stylesheet' type='text/css'>
-    <link href="/Css/font-family.css" rel='stylesheet' type='text/css'>
+    <link href="Css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href="Css/font-family.css" rel='stylesheet' type='text/css'>
     <!-- Styles -->
     <link rel="stylesheet" href="Css/bootstrap.min.css">
     <style>
@@ -38,8 +38,8 @@
     </table>
 </div>
         <!-- JavaScripts -->
-<script src="/Js/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+<script src="Js/jquery.min.js"></script>
+<script src="Js/bootstrap.min.js"></script>
 {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 <script type="text/javascript">
     $(function(){
@@ -49,7 +49,7 @@
             }
         });
         $('.exchange').click(function(){
-            $.post('/exprize/exchange',{pid:$(this).val()},function(data){
+            $.post('exprize/exchange',{pid:$(this).val()},function(data){
                 switch (data.state){
                     case 'success' :
                         alert('恭喜，兑换成功！');

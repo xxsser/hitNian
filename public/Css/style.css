@@ -1,5 +1,5 @@
 *{margin:0; padding:0; -webkit-tap-highlight-color:rgba(0,0,0,0);}
-body{background-image:url(/Images/gameback.jpg); background-repeat:no-repeat; background-size:100%; background-color: #000001; background-position:left top;  }
+body{background-image:url(../Images/gameback.jpg); background-repeat:no-repeat; background-size:100%; background-color: #000001; background-position:left top;  }
 img{max-width:100%;}
 .center {text-align:center;}
 .fullWidth {width: 100%;}
@@ -43,7 +43,7 @@ img{max-width:100%;}
 .alert .text {position:absolute;top:5%;color:#FFF;font-size:15px;width:100%;}
 .alert .btn {width:20%;position:absolute;left:40%;top:11%;}
 
-.exchange-box {width:74%;height: 50%; position:absolute; top:20%; left:10%; display:none; z-index:900;  padding:3%; background:url(/Images/box.png); background-repeat:no-repeat; background-size:100%;}
+.exchange-box {width:74%;height: 50%; position:absolute; top:20%; left:10%; display:none; z-index:900;  padding:3%; background:url(../Images/box.png); background-repeat:no-repeat; background-size:100%;}
 .exchange-box dl {height: 70%;font-size:0.8em;color:#FFF; line-height:1.8em;overflow-y:auto;text-align: center;list-style:none}
 .exchange-box .close {width:100%;text-align:center;margin-top:2%}
 .exchange-box .close img {width:30%;}

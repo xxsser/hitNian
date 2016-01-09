@@ -35,7 +35,7 @@
                 $("input").val(null);
             });
             $('#go-submit').click(function(){
-                window.location.href = '/ExpiryId/'+$('#code').val();
+                window.location.href = 'ExpiryId/'+$('#code').val();
             });
         });
     </script>

@@ -8,10 +8,10 @@
     <title>年兽大战,稀有宝物随机爆</title>
     <style>
         *{margin:0; padding:0; -webkit-tap-highlight-color:rgba(0,0,0,0);}
-        body{background-image:url(../Images/startbak.jpg); background-repeat:no-repeat; background-size:100%; background-color: #e04e46; background-position:left top;}
+        body{background-image:url(Images/startbak.jpg); background-repeat:no-repeat; background-size:100%; background-color: #e04e46; background-position:left top;}
         img{max-width:100%;}
         #hear2{width:60%; margin-top:22%; -webkit-animation-name:myfirst2; -webkit-animation-duration:5s; -webkit-animation-play-state:running; -webkit-animation-iteration-count:infinite;}
-        #ranking,#explain{width:70%; position:absolute; top:20%; left:10%; display:none; z-index:999;  padding:5%; background:url(/Images/box.png); background-repeat:no-repeat; background-size:100%;}
+        #ranking,#explain{width:70%; position:absolute; top:20%; left:10%; display:none; z-index:999;  padding:5%; background:url(Images/box.png); background-repeat:no-repeat; background-size:100%;}
         @-webkit-keyframes myfirst2{
             0%   { -webkit-transform:rotate(0deg);}
             50%  { -webkit-transform:rotate(-10deg);}
@@ -29,7 +29,7 @@
         #customers th {  font-size:1.1em;  padding-top:5px;  padding-bottom:4px;  background-color: #ea7568;  color:#ffffff;  }
         #customers tr.alt td {  color:#000000;  background-color: #f26d80;  opacity: 0.5;  }
     </style>
-    <script src="/Js/jquery.min.js"></script>
+    <script src="Js/jquery.min.js"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script type="text/javascript">
         wx.config({!! $js->config(['onMenuShareTimeline','onMenuShareAppMessage']) !!});
@@ -40,7 +40,7 @@
         });
         $(function(){
             $('#start').click(function(){
-                window.location.href = '/nianshou'
+                window.location.href = 'nianshou'
             });
             //排行榜
             $("#open_rank").click(function(){
@@ -61,12 +61,12 @@
                 title: '每天摇一摇，摇出年兽大礼包', // 分享标题
                         desc: '动动手腕，攻击年兽有奖品，更有iphone62等豪礼等着你，年兽大战等你来!', // 分享描述
                     link: 'http://hdwyc.3pdj.com/sharelink/'+$('#fid').val(), // 分享链接
-                    imgUrl: 'http://hdwyc.3pdj.com/Images/fx.jpg', // 分享图标
+                    imgUrl: 'http://hdwyc.3pdj.comImages/fx.jpg', // 分享图标
                     type: 'link', // 分享类型,music、video或link，不填默认为link
                     dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
                     success: function () {
                 // 用户确认分享后执行的回调函数
-                $.post('/share',{'fid':$('#fid').val(),'shared':trend},function(data){
+                $.post('share',{'fid':$('#fid').val(),'shared':trend},function(data){
                     if(data.state == 'success'){
                         var count = $('#attackNum').text();
                         $('#attackNum').text(count+1);
@@ -81,12 +81,12 @@
 <body>
 <input type="hidden" id="fid" value="{{ $user['fid'] }}" />
 <div  id="guize" style="position: absolute; right: 0px;top: 3%;">
-    <img src="/Images/yxgz.png" style="width: 80%"/>
+    <img src="Images/yxgz.png" style="width: 80%"/>
 </div>
 <div id="m1">当前参与人数{{ $userNum }}人<br />活动剩余{{ \Carbon\Carbon::create(2016,2,8)->diffInDays() }}天</div>
 <div id="p1">
     <div style="text-align:center;margin-top: 20%">
-        <img src="/Images/shou.png" id="hear2" />
+        <img src="Images/shou.png" id="hear2" />
     </div>
     <dl style="width:100%;color:#FFF;font-size:0.8em;text-align:center;line-height:1.5em;margin-top:2%;">
         <marquee direction="up" height="30" scrollamount="1">
@@ -98,15 +98,15 @@
         </marquee>
     </dl>
     <div style="width:100%;text-align:center;margin:3% 0 2%;" id="butt">
-        <img src="/Images/start.png" style="width:28%;" id="start" />
-        <img src="/Images/rank.png" style="width:28%;" id="open_rank" />
+        <img src="Images/start.png" style="width:28%;" id="start" />
+        <img src="Images/rank.png" style="width:28%;" id="open_rank" />
     </div>
-    <div style="text-align:center;width:100%;"><img src="/Images/logo.png" style="width:60%;" /></div>
+    <div style="text-align:center;width:100%;"><img src="Images/logo.png" style="width:60%;" /></div>
 </div>
 <div id="p2" style="margin:0 auto;position:relative;display:none;">
-    <img src="/Images/2.png" />
-    <img src="/Images/3.png" style="width:24%;position:absolute;top:77%;left:38%;" id="back" />
-    <div style="text-align:center;width:100%;margin-top:28%;"><img src="/Images/logo.png" style="width:60%;" /></div>
+    <img src="Images/2.png" />
+    <img src="Images/3.png" style="width:24%;position:absolute;top:77%;left:38%;" id="back" />
+    <div style="text-align:center;width:100%;margin-top:28%;"><img src="Images/logo.png" style="width:60%;" /></div>
 </div>
 
 <div id="ranking" style="height: 50%" >
@@ -127,13 +127,13 @@
             @endforeach
         </table>
     </dl>
-    <div class="close" style="width:100%;text-align:center;margin-top:2%;"><img src="/Images/ok.png" style="width:30%;" /></div>
+    <div class="close" style="width:100%;text-align:center;margin-top:2%;"><img src="Images/ok.png" style="width:30%;" /></div>
 </div>
 
 <div id="explain" style="height: 50%">
     <dl style="font-size:0.8em;color:#FFF; font-weight: bold; line-height:1.8em;height: 65%;overflow-y:auto;">
         <dd>1.每人每天可以攻击年兽两次。将页面分享给好友或者朋友圈可以增加一次攻击机会。</dd>
-        <dd>2.每次攻击年兽将随机掉落金币，每次攻击金币<img src="/Images/coin.png" style="width: 25%" />和伤害值<img src="/Images/shanghai.png" style="width: 25%" />予以累加。</dd>
+        <dd>2.每次攻击年兽将随机掉落金币，每次攻击金币<img src="Images/coin.png" style="width: 25%" />和伤害值<img src="Images/shanghai.png" style="width: 25%" />予以累加。</dd>
         <dd>3.好友点击通过您的分享首次进入游戏，可获赠50金币。</dd>
         <dd>4.金币可在游戏中兑换礼品。</dd>
         <dd>5.英雄榜伤害排名5分钟刷新一次，最终排名以活动结束时为准。</dd>
@@ -152,12 +152,12 @@
         <dd>13.中奖价值超过1000元以上，按照国家相关法律法规中奖人需缴纳金额20%的个人所得税。</dd>
         <dd>14.获得奖金满十元倍数起兑，不找零，不退现，可累计使用。</dd>
         <dd>15.线上游戏参与时间：2016年1月10日-2016年1月31日</dd>
-        <dd>16.客服电话：029-62908659</dd>
+        <dd>16.客服电话：029-68290999</dd>
         <dd>17.地址：长乐西路朝阳门外300米（原华东品牌服饰加盟广场）</dd>
         <dd>18.商户优惠券的使用，以店内通知为准</dd>
-        <dd style="margin-top:5%;"><a href="tel:029-62908659"><img src="images/bh.png" style="width:30%;margin:0 20% 0 10%;" /></a><a href="http://map.qq.com/?l=329065895"><img src="images/dh.png" style="width:30%;" /></a></dd>
+        <dd style="margin-top:5%;"><a href="tel:029-68290999"><img src="Images/bh.png" style="width:30%;margin:0 20% 0 10%;" /></a><a href="http://map.qq.com/?l=329065895"><img src="Images/dh.png" style="width:30%;" /></a></dd>
     </dl>
-    <div class="close" style="width:100%;text-align:center;margin-top:2%;"><img src="images/ok.png" style="width:30%;" /></div>
+    <div class="close" style="width:100%;text-align:center;margin-top:2%;"><img src="Images/ok.png" style="width:30%;" /></div>
 </div>
 </body>
 </html>

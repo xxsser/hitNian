@@ -38,14 +38,14 @@ class PrizeTableSeeder extends Seeder
             'name'      =>  '10元代金券',
             'num'       =>  500,
             'coin'      =>  4500,
-            'type'      =>  'exchange',
+            'type'      =>  'money',
         ]);
         \App\Prize::create([
             'rank'      =>  5,
             'name'      =>  '8元代金券',
             'num'       =>  1000,
             'coin'      =>  4000,
-            'type'      =>  'exchange',
+            'type'      =>  'money',
         ]);
 
         \App\Prize::create([
@@ -53,21 +53,28 @@ class PrizeTableSeeder extends Seeder
             'name'      =>  '5元代金券',
             'num'       =>  2000,
             'coin'      =>  3000,
-            'type'      =>  'exchange',
+            'type'      =>  'money',
         ]);
         \App\Prize::create([
             'rank'      =>  7,
             'name'      =>  '2元代金券',
             'num'       =>  3000,
             'coin'      =>  1800,
-            'type'      =>  'exchange',
+            'type'      =>  'money',
         ]);
         \App\Prize::create([
             'rank'      =>  8,
             'name'      =>  '1元代金券',
             'num'       =>  5000,
             'coin'      =>  1000,
-            'type'      =>  'exchange',
+            'type'      =>  'money',
+        ]);
+        \App\Prize::create([
+            'rank'      =>  9,
+            'name'      =>  '洗手液',
+            'num'       =>  81,
+            'coin'      =>  5000,
+            'type'      =>  'gift',
         ]);
     }
 }

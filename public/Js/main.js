@@ -11,7 +11,7 @@ $(function(){
     });
     $('.exchange').click(function(){
         if(confirm('确定要兑换吗?')){
-            $.post('/exprize/exchange',{pid:$(this).val()},function(data){
+            $.post('exprize/exchange',{pid:$(this).val()},function(data){
                 switch (data.state){
                     case 'success' :
                         $('#alertext').text('恭喜，兑换成功！');
@@ -39,7 +39,7 @@ $(function(){
         }
         blag = false;
         $.ajax({
-            url: "/attack",
+            url: "attack",
             data:{fid: $('#fid').val()},
             type: "POST",
             dataType:'json',
@@ -125,7 +125,7 @@ function setShare(trend){
         dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
         success: function () {
             // 用户确认分享后执行的回调函数
-            $.post('/share',{'fid':$('#fid').val(),'shared':trend},function(data){
+            $.post('share',{'fid':$('#fid').val(),'shared':trend},function(data){
                 if(data.state == 'success'){
                     var count = $('#attackNum').text();
                     $('#attackNum').text(count+1);

@@ -18,11 +18,10 @@ class WeAuthController extends Controller
         $this->secret = '304ed60a2c8b052cea2b9589f4427861';
     }
 
-
+    //授权用户
     public function wechatAuth(){
-        //判断微信用户是否已授权
         $auth = new Auth($this->appId, $this->secret);
-        $user = $auth->authorize(); // 返回用户 Bag
+        $user = $auth->authorize(url('/nian'.$_SERVER['REQUEST_URI'])); // 返回用户 Bag
         return $user;
     }
 

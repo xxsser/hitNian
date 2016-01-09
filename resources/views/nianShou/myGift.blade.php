@@ -17,7 +17,7 @@
     .giftlist li {margin-bottom:1%;text-align:center;}
     .giftlist li div{font-size:1em;padding:2% 0;}
 </style>
-<script src="/Js/jquery.min.js"></script>
+<script src="Js/jquery.min.js"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <body>
 <br>
@@ -38,7 +38,7 @@
                 <li>
                     <div>您的兑奖码ID: {{ $user['fid'] }}<br/>请在兑奖时出示该二维码</div>
                     <div style="text-align: center;">
-                        <img src="http://qr.topscan.com/api.php?text={{ url('/ExpiryId',Session::get('logged_user')['fid']) }}" />
+                        <img src="http://qr.topscan.com/api.php?text={{ url('/nian/ExpiryId',Session::get('logged_user')['fid']) }}" />
                     </div>
                 </li>
         @endif
@@ -46,8 +46,8 @@
     <div style="clear:both;"></div>
 </div>
 <br>
-<div style="text-align:center;width:100%;margin-top:1%;"><a href="http://www.029qq.net/2015/10/wych/"><img src="images/lianjie.png" style="width:50%;" /></a></div>
-<div style="text-align:center;width:100%;margin-top:1%;"><img src="images/logo.png" style="width:30%;" /></div>
+<div style="text-align:center;width:100%;margin-top:1%;"><a href="http://www.029qq.net/2015/10/wych/"><img src="Images/lianjie.png" style="width:50%;" /></a></div>
+<div style="text-align:center;width:100%;margin-top:1%;"><img src="Images/logo.png" style="width:30%;" /></div>
 
 </body>
 </html>
