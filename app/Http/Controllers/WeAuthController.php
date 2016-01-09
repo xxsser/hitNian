@@ -19,8 +19,8 @@ class WeAuthController extends Controller
     }
 
     //授权用户
-    public function wechatAuth(Requests $requests){
-        dd($requests->url());
+    public function wechatAuth(){
+        dd($_SERVER['REQUEST_URI']);
         $auth = new Auth($this->appId, $this->secret);
         $user = $auth->authorize(); // 返回用户 Bag
         return $user;
