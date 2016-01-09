@@ -18,7 +18,7 @@ class IndexController extends Controller
     //开始页面
     public function startIndex(){
 
-        dd(URL::getFacadeRoot());
+        dd(URL::current());
         return view('nianShou.start',[
             'user'      =>  $this->user,
             'js'        =>  $this->wechat->jsSet(),
