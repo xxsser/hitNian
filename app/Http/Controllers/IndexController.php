@@ -27,7 +27,7 @@ class IndexController extends Controller
 
     //活动首页
     public function index(){
-        return view('nianshou.index',[
+        return view('nianShou.index',[
             'user'      =>  $this->user,
             'js'        =>  $this->wechat->jsSet(),
             'attackNum' =>  \App\Http\Controllers\AttackController::getAttackCount($this->user['fid']),
