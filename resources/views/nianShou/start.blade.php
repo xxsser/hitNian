@@ -59,7 +59,7 @@
         function setShare(trend){
             return {
                 title: '每天摇一摇，摇出年兽大礼包', // 分享标题
-                        desc: '动动手腕，攻击年兽有奖品，更有iphone62等豪礼等着你，年兽大战等你来!', // 分享描述
+                        desc: '动动手腕，攻击年兽有奖品，更有iphone6S等豪礼等着你，年兽大战等你来!', // 分享描述
                     link: '{{ URL::current() }}/sharelink/'+$('#fid').val(), // 分享链接
                     imgUrl: '{{ URL::current() }}/Images/fx.jpg', // 分享图标
                     type: 'link', // 分享类型,music、video或link，不填默认为link
