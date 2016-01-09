@@ -22,6 +22,7 @@
     </script>
 </head>
 <body>
+{{ dd(111) }}
 <input type="hidden" id="fid" value="{{ $user['fid'] }}" />
 <div class="share" id="share"><img src="Images/share.png" /></div>
 <div class="chuizi-box">
@@ -38,7 +39,7 @@
 </div>
 <div class="attackNumBox">
     <img src="Images/gongjicishu.png" />
-    <div>剩余<label id="attackNum">{{ $attackNum['surplus'] or '0' }}</label>次攻击</div>
+    <div>剩余<label id="attackNum">{{ $attackNum['surplus'] or 0 }}</label>次攻击</div>
 </div>
 <div id="p1">
     <div class="center">
