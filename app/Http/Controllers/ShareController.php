@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Http\Requests;
+use Illuminate\Support\Facades\URL;
 use Mockery\CountValidator\Exception;
 use Session;
 use DB;
@@ -61,6 +62,6 @@ class ShareController extends Controller
                 }
             }
         }
-        return redirect('/');
+        return redirect(URL::action('IndexController@startIndex'));
     }
 }
