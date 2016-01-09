@@ -27,7 +27,7 @@
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //Route::auth();
+    Route::auth();
     Route::get('/admin', 'AdminController@index');
     Route::post('/admin/canche_code', 'AdminController@cancheCode');
     Route::get('/ExpiryId/{fid}', 'AdminController@cancheWithQr')->where('fid','^[0-9]*$');
