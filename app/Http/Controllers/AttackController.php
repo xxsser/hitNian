@@ -32,7 +32,6 @@ class AttackController extends Controller
             'fan_id'   =>  $request->input('fid'),
             'damage'   =>  $damageValue,
             'coin'     =>  $coinValue,
-            'prize_id' =>  0,
         ]);
 
         //将攻击值和金币相加
