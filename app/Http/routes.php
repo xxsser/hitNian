@@ -26,7 +26,7 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web'],'prefix' => 'Nian'], function () {
     Route::auth();
     Route::get('/admin', 'AdminController@index');
     Route::post('/admin/canche_code', 'AdminController@cancheCode');
@@ -42,9 +42,7 @@ Route::group(['middleware' => ['web']], function () {
     //奖品兑换页
     Route::get('/exprize','PrizeController@exPrize');
     Route::post('/exprize/exchange', 'PrizeController@getExchange');
-});
-
-Route::group(['middleware' => 'checkfan'], function () {
+    //攻击和分享ajax
     Route::post('/attack','AttackController@getAttack');
     Route::post('/share','ShareController@main');
 });
