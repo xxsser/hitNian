@@ -77,7 +77,7 @@
         <button class="btn-long" id="gift-list-btn">查看所有奖品</button>
     </div>
     <div class="center">
-        <a href="../myprize"><button class="btn-long">我的奖品</button></a>
+        <a href="/nian/myprize"><button class="btn-long">我的奖品</button></a>
     </div>
 </div>
 <div class="alert" id="box">
