@@ -49,7 +49,7 @@
             }
         });
         $('.exchange').click(function(){
-            $.post('/exprize/exchange',{pid:$(this).val()},function(data){
+            $.post('exprize/exchange',{pid:$(this).val()},function(data){
                 switch (data.state){
                     case 'success' :
                         alert('恭喜，兑换成功！');
