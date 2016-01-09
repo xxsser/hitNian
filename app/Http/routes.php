@@ -26,9 +26,9 @@
 |
 */
 
-Route::group(['prefix' =>'nian','middleware' => ['web']], function () {
+Route::group(['middleware' => ['web']], function () {
     //Route::auth();
-    Route::get('/admin', 'AdminController@index');
+    Route::get('/nian/admin', 'AdminController@index');
     Route::post('/admin/canche_code', 'AdminController@cancheCode');
     Route::get('/ExpiryId/{fid}', 'AdminController@cancheWithQr')->where('fid','^[0-9]*$');
     Route::post('/admin/canche_fid','AdminController@cancheFid');
