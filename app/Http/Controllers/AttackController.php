@@ -12,6 +12,9 @@ use DB;
 class AttackController extends Controller
 {
     public function getAttack(Request $request){
+        $this->validate($request, [
+            'fid'   => 'required|integer',
+        ]);
         //判断用户当日攻击次数
         $reState = collect();
         $atkNum = self::getAttackCount($request->input('fid'));

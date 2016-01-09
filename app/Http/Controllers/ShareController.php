@@ -12,6 +12,9 @@ class ShareController extends Controller
 {
     //用户分享后处理逻辑
     public function main(Request $request ){
+        $this->validate($request, [
+            'fid'   => 'required|integer',
+        ]);
         \App\Fan::findOrFail($request->input('fid'));
         $shareInfo = new \App\Share;
         $num = $shareInfo::where('fan_id',$request->input('fid'))->where('created_at','>',Carbon::today())->count();
