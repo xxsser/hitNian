@@ -86,8 +86,8 @@
     <img src="Images/ok.png" class="btn close" />
 </div>
 <div class="gift-list">
-    <img src="images/jpnr.png" />
-    <img src="images/3.png" class="back close" />
+    <img src="Images/jpnr.png" />
+    <img src="Images/3.png" class="back close" />
 </div>
 {{--<audio id="audio" width="0" height="0"><source src="sound/5018.wav" /></audio>--}}
 <div hidden>
