@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\URL;
 
 class IndexController extends Controller
 {
@@ -16,7 +17,7 @@ class IndexController extends Controller
     }
     //开始页面
     public function startIndex(){
-        dd(Url::current());
+        dd(URL::full());
         return view('nianShou.start',[
             'user'      =>  $this->user,
             'js'        =>  $this->wechat->jsSet(),
