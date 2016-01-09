@@ -22,7 +22,6 @@
     </script>
 </head>
 <body>
-{{ dd(111) }}
 <input type="hidden" id="fid" value="{{ $user['fid'] }}" />
 <div class="share" id="share"><img src="Images/share.png" /></div>
 <div class="chuizi-box">
