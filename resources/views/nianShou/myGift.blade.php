@@ -38,7 +38,7 @@
                 <li>
                     <div>您的兑奖码ID: {{ $user['fid'] }}<br/>请在兑奖时出示该二维码</div>
                     <div style="text-align: center;">
-                        <img src="http://qr.topscan.com/api.php?text={{ url('/ExpiryId',Session::get('logged_user')['fid']) }}" />
+                        <img src="http://qr.topscan.com/api.php?text={{ url('/nian/ExpiryId',Session::get('logged_user')['fid']) }}" />
                     </div>
                 </li>
         @endif
