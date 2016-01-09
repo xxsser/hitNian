@@ -152,10 +152,10 @@
         <dd>13.中奖价值超过1000元以上，按照国家相关法律法规中奖人需缴纳金额20%的个人所得税。</dd>
         <dd>14.获得奖金满十元倍数起兑，不找零，不退现，可累计使用。</dd>
         <dd>15.线上游戏参与时间：2016年1月10日-2016年1月31日</dd>
-        <dd>16.客服电话：029-62908659</dd>
+        <dd>16.客服电话：029-68290999</dd>
         <dd>17.地址：长乐西路朝阳门外300米（原华东品牌服饰加盟广场）</dd>
         <dd>18.商户优惠券的使用，以店内通知为准</dd>
-        <dd style="margin-top:5%;"><a href="tel:029-62908659"><img src="images/bh.png" style="width:30%;margin:0 20% 0 10%;" /></a><a href="http://map.qq.com/?l=329065895"><img src="images/dh.png" style="width:30%;" /></a></dd>
+        <dd style="margin-top:5%;"><a href="tel:029-68290999"><img src="images/bh.png" style="width:30%;margin:0 20% 0 10%;" /></a><a href="http://map.qq.com/?l=329065895"><img src="images/dh.png" style="width:30%;" /></a></dd>
     </dl>
     <div class="close" style="width:100%;text-align:center;margin-top:2%;"><img src="images/ok.png" style="width:30%;" /></div>
 </div>
