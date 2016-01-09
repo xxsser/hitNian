@@ -26,7 +26,7 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web'] , 'prefix' =>'nian' ], function () {
     Route::auth();
     Route::get('/admin', 'AdminController@index');
     Route::post('/admin/canche_code', 'AdminController@cancheCode');
