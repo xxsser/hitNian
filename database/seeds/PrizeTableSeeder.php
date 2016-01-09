@@ -72,7 +72,7 @@ class PrizeTableSeeder extends Seeder
         \App\Prize::create([
             'rank'      =>  9,
             'name'      =>  '洗手液',
-            'num'       =>  80,
+            'num'       =>  81,
             'coin'      =>  5000,
             'type'      =>  'gift',
         ]);
