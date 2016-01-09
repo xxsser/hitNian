@@ -155,9 +155,9 @@
         <dd>16.客服电话：029-68290999</dd>
         <dd>17.地址：长乐西路朝阳门外300米（原华东品牌服饰加盟广场）</dd>
         <dd>18.商户优惠券的使用，以店内通知为准</dd>
-        <dd style="margin-top:5%;"><a href="tel:029-68290999"><img src="images/bh.png" style="width:30%;margin:0 20% 0 10%;" /></a><a href="http://map.qq.com/?l=329065895"><img src="images/dh.png" style="width:30%;" /></a></dd>
+        <dd style="margin-top:5%;"><a href="tel:029-68290999"><img src="Images/bh.png" style="width:30%;margin:0 20% 0 10%;" /></a><a href="http://map.qq.com/?l=329065895"><img src="Images/dh.png" style="width:30%;" /></a></dd>
     </dl>
-    <div class="close" style="width:100%;text-align:center;margin-top:2%;"><img src="images/ok.png" style="width:30%;" /></div>
+    <div class="close" style="width:100%;text-align:center;margin-top:2%;"><img src="Images/ok.png" style="width:30%;" /></div>
 </div>
 </body>
 </html>
