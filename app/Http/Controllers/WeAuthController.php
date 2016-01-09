@@ -38,7 +38,7 @@ class WeAuthController extends Controller
 
     public function jsSet(){
         $js = new Js($this->appId, $this->secret);
-        return $js->getSignaturePackage(url('/nian'.$_SERVER['REQUEST_URI']));
+        return $js->getSignaturePackage();
     }
 
     /* *
