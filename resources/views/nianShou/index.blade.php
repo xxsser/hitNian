@@ -77,7 +77,7 @@
         <button class="btn-long" id="gift-list-btn">查看所有奖品</button>
     </div>
     <div class="center">
-        <a href="/nian/myprize"><button class="btn-long">我的奖品</button></a>
+        <a href="http://mp.weixin.qq.com/s?__biz=MzA4NTU1NzA5OA==&mid=207414262&idx=1&sn=3923b1d296e5e250b09269110cd9f427&scene=1&srcid=0110gZ8qcnYGQPiAdb7pnO0i#rd"><button class="btn-long">我的奖品</button></a>
     </div>
 </div>
 <div class="alert" id="box">
