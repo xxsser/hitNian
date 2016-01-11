@@ -17,12 +17,10 @@
             50%  { -webkit-transform:rotate(-10deg);}
             100% { -webkit-transform:rotate(0deg);}
         }
-        #p2{width:90%;}
         #butt{width:100%;position:relative;}
         #m1{position:absolute;top:20%;left:5%;color:#FFF;font-size:0.7em;width:35%;background: black;opacity: 0.7;border-top-left-radius: 20px;border-bottom-right-radius:20px; padding: 5px;text-align: center}
         @media all and (max-width:320px){ #hear2{width:60%;}
             #butt{width:88%;}
-            #p2{width:80%;}
         }
         #customers {  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;  width:100%;  border-collapse:collapse;  }
         #customers td, #customers th {  font-size:1em;  border:1px solid #e6c7e8;  padding:3px 7px 2px 7px;  }
