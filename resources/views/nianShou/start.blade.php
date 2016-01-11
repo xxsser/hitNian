@@ -103,11 +103,6 @@
     </div>
     <div style="text-align:center;width:100%;"><img src="Images/logo.png" style="width:60%;" /></div>
 </div>
-<div id="p2" style="margin:0 auto;position:relative;display:none;">
-    <img src="Images/2.png" />
-    <img src="Images/3.png" style="width:24%;position:absolute;top:77%;left:38%;" id="back" />
-    <div style="text-align:center;width:100%;margin-top:28%;"><img src="Images/logo.png" style="width:60%;" /></div>
-</div>
 
 <div id="ranking" style="height: 50%" >
     <dl style="font-size:0.8em;color:#FFF; line-height:1.8em;height:65%;overflow-y:auto;text-align: center;list-style:none">
