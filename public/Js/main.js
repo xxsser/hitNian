@@ -47,7 +47,7 @@ $(function(){
                 switch (data.state){
                     case 'success' :
                         $(".chuizi-box").show()
-                        timerTotal = 5;
+                        timerTotal = 10;
                         $("#chuizi").rotate({
                             duration:1000,
                             angle: 0,
@@ -85,7 +85,6 @@ $(function(){
                                     $(".chuizi-box").hide();
                                     //显示数据
                                     $('#box').show();
-                                    timerTotal = 80;
                                 },2000);
                             }
                         });
@@ -109,6 +108,9 @@ $(function(){
         setTimeout(function(){blag = true;},3000);
     });
     $(".close").click(function(){
+        if(timerTotal == 10){
+            timerTotal = 80;
+        }
         $(this).parent().hide();
     });
     $('#gift-list-btn').click(function(){
