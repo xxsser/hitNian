@@ -85,7 +85,6 @@ $(function(){
                                     $(".chuizi-box").hide();
                                     //显示数据
                                     $('#box').show();
-                                    timerTotal = 80;
                                 },2000);
                             }
                         });
@@ -110,6 +109,9 @@ $(function(){
     });
     $(".close").click(function(){
         $(this).parent().hide();
+        if(timerTotal == 0){
+            timerTotal = 80;
+        }
     });
     $('#gift-list-btn').click(function(){
         $(this).parent().parent().hide();
