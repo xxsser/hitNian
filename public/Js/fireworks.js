@@ -252,7 +252,7 @@ function loop() {
 
 // mouse event bindings
 // update the mouse coordinates on mousemove
-canvas.addEventListener( 'mousemove', function( e ) {
+/*canvas.addEventListener( 'mousemove', function( e ) {
     mx = e.pageX - canvas.offsetLeft;
     my = e.pageY - canvas.offsetTop;
 });
@@ -266,7 +266,7 @@ canvas.addEventListener( 'mousedown', function( e ) {
 canvas.addEventListener( 'mouseup', function( e ) {
     e.preventDefault();
     mousedown = false;
-});
+});*/
 
 // once the window loads, we are ready for some fireworks!
 window.onload = loop;
