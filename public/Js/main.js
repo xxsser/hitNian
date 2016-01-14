@@ -86,7 +86,7 @@ $(function(){
                                     //显示数据
                                     $('#box').show();
                                     timerTotal = 80;
-                                },1000);
+                                },2000);
                             }
                         });
                         break;
