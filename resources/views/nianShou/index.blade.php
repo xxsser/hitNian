@@ -8,10 +8,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>年兽大战,稀有宝物随机爆</title>
     <link rel="stylesheet" href="Css/style.css?v=011" />
-    <script type="text/javascript" src="Js/jquery.min.js"></script>
-    <script type="text/javascript" src="Js/main.js?v=1.1"></script>
-    <script type="text/javascript" src="Js/jQueryRotateCompressed.js"></script>
-    <script type="text/javascript" src="Js/jquery-jrumble.js"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script type="text/javascript">
         wx.config({!! $js->config(['onMenuShareTimeline','onMenuShareAppMessage']) !!});
@@ -98,5 +94,9 @@
 </div>
 {{--<audio id="audio" width="0" height="0" autoplay="autoplay" loop="loop"><source src="Sound/sond.mp3"></audio>--}}
 </body>
+<script type="text/javascript" src="Js/jquery.min.js"></script>
+<script type="text/javascript" src="Js/jQueryRotateCompressed.js"></script>
+<script type="text/javascript" src="Js/jquery-jrumble.js"></script>
 <script type="text/javascript" src="Js/fireworks.js"></script>
+<script type="text/javascript" src="Js/main.js?v=1.1"></script>
 </html>
