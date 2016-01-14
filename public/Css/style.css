@@ -69,4 +69,4 @@ img{max-width:100%;}
 #customers td, #customers th {  font-size:1em;  border:1px solid #e6c7e8;  padding:3px 7px 2px 7px;  }
 #customers th {  font-size:1.1em;  padding-top:5px;  padding-bottom:4px;  background-color: #ea7568;  color:#ffffff;  }
 #customers tr.alt td {  color:#000000;  background-color: #f26d80;  opacity: 0.5;  }
-canvas {  cursor: crosshair; display: block;  position: absolute;  top: 0;  left: 0;  z-index: 999 ;  }
+canvas {  cursor: crosshair; display: block;  position: absolute;  top: 0;  left: 0;  }
