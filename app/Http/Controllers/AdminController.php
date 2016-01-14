@@ -65,7 +65,7 @@ class AdminController extends Controller
             'phone' => 'regex:/^1[34578][0-9]{9}$/',
             'type'  => 'required|in:money,gift',
         ], [], $attributes);
-        if($request->input('key') == 888){
+        if($request->input('key') == 888){  //验证密钥
             $up = DB::table('exchanges')->leftJoin('prizes' , 'exchanges.prize_id', '=' ,'prizes.id')
                 ->where(['exchanges.fan_id'=>$request->input('fid'),'prizes.type'=>$request->input('type')])
                 ->update(['exchanges.isget'=>1,'exchanges.updated_at'=>Carbon::now()]);
