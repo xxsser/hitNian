@@ -144,12 +144,12 @@ function Particle( x, y ) {
     this.angle = random( 0, Math.PI * 2 );
     this.speed = random( 1, 10 );
     // friction will slow the particle down
-    this.friction = 0.95;
+    this.friction = 0.97;
     // gravity will be applied and pull the particle down
     this.gravity = 1;
     // set the hue to a random number +-20 of the overall hue variable
-    this.hue = random( hue - 20, hue + 20 );
-    this.brightness = random( 50, 80 );
+    this.hue = random( hue - 40, hue + 40 );
+    this.brightness = random( 50, 100 );
     this.alpha = 1;
     // set how fast the particle fades out
     this.decay = random( 0.015, 0.03 );
@@ -188,7 +188,7 @@ Particle.prototype.draw = function() {
 // create particle group/explosion
 function createParticles( x, y ) {
     // increase the particle count for a bigger explosion, beware of the canvas performance hit with the increased particles though
-    var particleCount = 30;
+    var particleCount = 50;
     while( particleCount-- ) {
         particles.push( new Particle( x, y ) );
     }
@@ -249,24 +249,6 @@ function loop() {
         limiterTick++;
     }
 }
-
-// mouse event bindings
-// update the mouse coordinates on mousemove
-/*canvas.addEventListener( 'mousemove', function( e ) {
-    mx = e.pageX - canvas.offsetLeft;
-    my = e.pageY - canvas.offsetTop;
-});
-
-// toggle mousedown state and prevent canvas from being selected
-canvas.addEventListener( 'mousedown', function( e ) {
-    e.preventDefault();
-    mousedown = true;
-});
-
-canvas.addEventListener( 'mouseup', function( e ) {
-    e.preventDefault();
-    mousedown = false;
-});*/
 
 // once the window loads, we are ready for some fireworks!
 window.onload = loop;
