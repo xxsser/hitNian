@@ -47,7 +47,7 @@ $(function(){
                 switch (data.state){
                     case 'success' :
                         $(".chuizi-box").show()
-                        timerTotal = 10;
+                        timerTotal = 20;
                         $("#chuizi").rotate({
                             duration:1000,
                             angle: 0,
