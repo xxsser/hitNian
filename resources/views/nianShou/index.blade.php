@@ -98,5 +98,5 @@
 <script type="text/javascript" src="Js/jQueryRotateCompressed.js"></script>
 <script type="text/javascript" src="Js/jquery-jrumble.js"></script>
 <script type="text/javascript" src="Js/fireworks.js"></script>
-<script type="text/javascript" src="Js/main.js?v=1.3"></script>
+<script type="text/javascript" src="Js/main.js?v=1.2"></script>
 </html>
