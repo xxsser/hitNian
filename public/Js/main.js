@@ -47,6 +47,7 @@ $(function(){
                 switch (data.state){
                     case 'success' :
                         $(".chuizi-box").show()
+                        timerTotal = 10;
                         $("#chuizi").rotate({
                             duration:1000,
                             angle: 0,
@@ -54,7 +55,6 @@ $(function(){
                             animateTo:25,
                             callback: function(){
                                 //年兽效果
-                                timerTotal = 0;
                                 $('#nianshou').css({
                                     '-webkit-animation-name':'nianAttack',
                                     '-webkit-animation-duration':'1s'
