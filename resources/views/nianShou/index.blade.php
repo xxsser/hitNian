@@ -22,6 +22,7 @@
     </script>
 </head>
 <body>
+<canvas id="canvas">Canvas is not supported in your browser.</canvas>
 <input type="hidden" id="fid" value="{{ $user['fid'] }}" />
 <div class="share" id="share"><img src="Images/share.png" /></div>
 <div class="chuizi-box">
@@ -97,4 +98,5 @@
 </div>
 {{--<audio id="audio" width="0" height="0" autoplay="autoplay" loop="loop"><source src="Sound/sond.mp3"></audio>--}}
 </body>
+<script type="text/javascript" src="Js/fireworks.js"></script>
 </html>
