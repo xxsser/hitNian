@@ -108,8 +108,8 @@ $(function(){
         setTimeout(function(){blag = true;},3000);
     });
     $(".close").click(function(){
-        if(timerTotal == 20){
-            timerTotal = 80;
+        if(timerTotal < 100){
+            timerTotal = 100;
         }
         $(this).parent().hide();
     });
