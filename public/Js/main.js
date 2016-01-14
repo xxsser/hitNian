@@ -54,6 +54,7 @@ $(function(){
                             animateTo:25,
                             callback: function(){
                                 //年兽效果
+                                timerTotal = 0;
                                 $('#nianshou').css({
                                     '-webkit-animation-name':'nianAttack',
                                     '-webkit-animation-duration':'1s'
@@ -84,6 +85,7 @@ $(function(){
                                     $(".chuizi-box").hide();
                                     //显示数据
                                     $('#box').show();
+                                    timerTotal = 80;
                                 },1000);
                             }
                         });
