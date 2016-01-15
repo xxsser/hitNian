@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Http\Requests;
 use Overtrue\Wechat\Auth;
 use Overtrue\Wechat\Js;
