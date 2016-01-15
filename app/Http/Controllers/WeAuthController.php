@@ -24,6 +24,7 @@ class WeAuthController extends Controller
         return $user;
     }
 
+    //获取微信用户信息
     public function getWechatInfo(){
         if (session('logged_user')) {
             $user = session('logged_user');
