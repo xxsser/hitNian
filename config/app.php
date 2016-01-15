@@ -158,7 +158,7 @@ return [
 
         /*
          * Wechat Service Providers...
-         * */
+         */
         Overtrue\LaravelWechat\ServiceProvider::class,
 
     ],
