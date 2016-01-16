@@ -55,6 +55,7 @@ $(function(){
                             animateTo:25,
                             callback: function(){
                                 //年兽效果
+                                $('#bom').show();
                                 $('#nianshou').css({
                                     '-webkit-animation-name':'nianAttack',
                                     '-webkit-animation-duration':'1s'
@@ -81,6 +82,8 @@ $(function(){
                                         '-webkit-animation-name':'nianNormen',
                                         '-webkit-animation-duration':'8s'
                                     });
+                                    //隐藏爆炸
+                                    $('#bom').hide();
                                     //隐藏锤子
                                     $(".chuizi-box").hide();
                                     //显示数据
