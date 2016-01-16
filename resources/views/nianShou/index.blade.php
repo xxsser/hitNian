@@ -24,7 +24,7 @@
 <div class="chuizi-box">
     <img src="Images/jida.png" id="chuizi"/>
 </div>
-<div style="position: absolute; top: 0 ;left: 0; margin-top: 20%">
+<div style="position: absolute; top: 0 ;left: 0; margin-top: 23%;z-index: 2">
     <img src="Images/boom.png" />
 </div>
 <div class="coin-box">
