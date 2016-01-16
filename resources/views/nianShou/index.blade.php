@@ -89,11 +89,11 @@
     <img src="Images/jpnr.png" />
     <img src="Images/3.png" class="back close" />
 </div>
-{{--<audio id="audio" width="0" height="0"><source src="sound/5018.wav" /></audio>--}}
+{{--<audio id="boom_audio" width="0" height="0"><source src="Sound/boom.wav" /></audio>--}}
 <div hidden>
-    {{--<audio id="musicBox" controls="controls">
-        <source src="Sound/shake.mp3" type="audio/mp3">
-    </audio>--}}
+    <audio id="musicBox" controls="controls">
+        <source src="Sound/boom.wav" type="audio/wav">
+    </audio>
 </div>
 {{--<audio id="audio" width="0" height="0" autoplay="autoplay" loop="loop"><source src="Sound/sond.mp3"></audio>--}}
 </body>

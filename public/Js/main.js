@@ -46,6 +46,7 @@ $(function(){
             success:function(data){
                 switch (data.state){
                     case 'success' :
+                        $('#musicBox').play();
                         $(".chuizi-box").show()
                         timerTotal = 20;
                         $("#chuizi").rotate({
