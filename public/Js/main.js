@@ -49,7 +49,7 @@ $(function(){
                         $(".chuizi-box").show()
                         timerTotal = 20;
                         $("#chuizi").rotate({
-                            duration:1000,
+                            duration:500,
                             angle: 0,
                             center: ["0%", "100%"],
                             animateTo:25,
