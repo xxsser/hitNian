@@ -25,7 +25,7 @@
     <img src="Images/jida.png" id="chuizi"/>
 </div>
 <div>
-    <img src="Image/boom.png" />
+    <img src="Images/boom.png" />
 </div>
 <div class="coin-box">
     <img src="Images/diaojinbi.png" id="jinbi"/>
