@@ -46,11 +46,6 @@ $(function(){
             success:function(data){
                 switch (data.state){
                     case 'success' :
-                        var media = document.getElementById("musicBox");
-                        if(!media.src){
-                            media.src="Sound/boom.wav"
-                        }
-                        media.play();
                         $(".chuizi-box").show()
                         timerTotal = 20;
                         $("#chuizi").rotate({
@@ -60,6 +55,7 @@ $(function(){
                             animateTo:25,
                             callback: function(){
                                 //年兽效果
+                                window.document.getElementById("musicBox").play()
                                 $('#boom').show();
                                 $('#nianshou').css({
                                     '-webkit-animation-name':'nianAttack',
