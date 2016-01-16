@@ -46,7 +46,11 @@ $(function(){
             success:function(data){
                 switch (data.state){
                     case 'success' :
-                        $('#musicBox').play();
+                        var media = document.getElementById("musicBox");
+                        if(!media.src){
+                            media.src="Sound/boom.wav"
+                        }
+                        media.play();
                         $(".chuizi-box").show()
                         timerTotal = 20;
                         $("#chuizi").rotate({

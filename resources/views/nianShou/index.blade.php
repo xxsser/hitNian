@@ -92,7 +92,7 @@
 {{--<audio id="boom_audio" width="0" height="0"><source src="Sound/boom.wav" /></audio>--}}
 <div hidden>
     <audio id="musicBox" controls="controls">
-        <source src="Sound/boom.wav" type="audio/wav">
+        <source src="Sound/boom.wav" >
     </audio>
 </div>
 {{--<audio id="audio" width="0" height="0" autoplay="autoplay" loop="loop"><source src="Sound/sond.mp3"></audio>--}}
