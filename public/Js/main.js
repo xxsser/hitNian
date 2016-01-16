@@ -49,7 +49,7 @@ $(function(){
                         $(".chuizi-box").show()
                         timerTotal = 20;
                         $("#chuizi").rotate({
-                            duration:500,
+                            duration:300,
                             angle: 0,
                             center: ["0%", "100%"],
                             animateTo:25,
@@ -83,13 +83,13 @@ $(function(){
                                         '-webkit-animation-name':'nianNormen',
                                         '-webkit-animation-duration':'8s'
                                     });
-                                    //隐藏爆炸
-                                    $('#boom').hide();
                                     //隐藏锤子
                                     $(".chuizi-box").hide();
                                     //显示数据
                                     $('#box').show();
-                                },2000);
+                                    //隐藏爆炸
+                                    $('#boom').hide();
+                                },2500);
                             }
                         });
                         break;
