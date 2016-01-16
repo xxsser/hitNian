@@ -27,7 +27,7 @@
 <div>
     <img src="Images/boom.png" />
 </div>
-<div class="coin-box">
+<div class="coin-box" style="position: absolute; top: 0 ;left: 0; margin-top: 20%">
     <img src="Images/diaojinbi.png" id="jinbi"/>
 </div>
 <div class="gameDataBox">
