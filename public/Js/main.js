@@ -30,7 +30,8 @@ function deviceMotionHandler(eventData) {
             last_time = curTime;
             setTimeout(function(){
                 //摇一摇
-                $('#attack').click();
+                alert(1);
+               // $('#attack').click();
             }, 1500);
         }
         last_x = x;
