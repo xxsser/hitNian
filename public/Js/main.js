@@ -27,8 +27,11 @@ function deviceMotionHandler(eventData) {
             if ((last_time != 0 && (curTime - last_time < 3000))) {
                 return;
             }
+            if(count <= 0){
+                return;
+            }
             last_time = curTime;
-            alert(1);
+            $('#attack').click();
         }
         last_x = x;
         last_y = y;
