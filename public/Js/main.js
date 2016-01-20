@@ -30,13 +30,12 @@ function deviceMotionHandler(eventData) {
             if(count <= 0){
                 return;
             }
-            last_time = curTime;
             if($("#box").is(":hidden")){
-                alert(1);
+                last_time = curTime;
+                $('#attack').click();
             }else{
-                alert(2);
+                return
             }
-            //$('#attack').click();
         }
         last_x = x;
         last_y = y;
