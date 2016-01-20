@@ -40,6 +40,7 @@ function deviceMotionHandler(eventData) {
     }
 }
 $(function(){
+    init();
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
