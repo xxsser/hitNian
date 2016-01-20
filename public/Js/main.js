@@ -31,7 +31,12 @@ function deviceMotionHandler(eventData) {
                 return;
             }
             last_time = curTime;
-            $('#attack').click();
+            if($("#box").is(":hidden")){
+                alert(1);
+            }else{
+                alert(2);
+            }
+            //$('#attack').click();
         }
         last_x = x;
         last_y = y;
