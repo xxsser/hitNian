@@ -1,9 +1,10 @@
 var blag = true;
+var count = 0;
 var SHAKE_THRESHOLD = 3000;
 var last_update = 0;
-var x=y=z=last_x=last_y=last_z=0;
+var x, y, z, last_x, last_y, last_z;
 var last_time = 0;
-var count = parseInt($('#attackNum').text());
+
 function init(){
     last_update=new Date().getTime();
     if (window.DeviceMotionEvent) {
@@ -15,7 +16,7 @@ function init(){
 function deviceMotionHandler(eventData) {
     var acceleration =eventData.accelerationIncludingGravity;
     var curTime = new Date().getTime();
-    if ((curTime - last_update)> 3000) {
+    if ((curTime - last_update)> 100) {
         var diffTime = curTime -last_update;
         last_update = curTime;
         x = acceleration.x;
@@ -23,16 +24,11 @@ function deviceMotionHandler(eventData) {
         z = acceleration.z;
         var speed = Math.abs(x +y + z - last_x - last_y - last_z) / diffTime * 10000;
         if (speed > SHAKE_THRESHOLD) {
-            if ((last_time != 0 && (curTime - last_time < 2000))) {
+            if ((last_time != 0 && (curTime - last_time < 3000))) {
                 return;
             }
-            if (count <= 0) {return;}
             last_time = curTime;
-            setTimeout(function(){
-                //摇一摇
-                alert(1);
-               // $('#attack').click();
-            }, 1500);
+            alert(1);
         }
         last_x = x;
         last_y = y;
@@ -41,6 +37,7 @@ function deviceMotionHandler(eventData) {
 }
 $(function(){
     init();
+    count = parseInt($('#attackNum').text());
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
