@@ -1,4 +1,43 @@
 var blag = true;
+var SHAKE_THRESHOLD = 3000;
+var last_update = 0;
+var x=y=z=last_x=last_y=last_z=0;
+var last_time = 0;
+var count = parseInt($('#attackNum').text());
+function init(){
+    last_update=new Date().getTime();
+    if (window.DeviceMotionEvent) {
+        window.addEventListener('devicemotion',deviceMotionHandler, false);
+    } else{
+        alert('not support mobile event');
+    }
+}
+function deviceMotionHandler(eventData) {
+    var acceleration =eventData.accelerationIncludingGravity;
+    var curTime = new Date().getTime();
+    if ((curTime - last_update)> 3000) {
+        var diffTime = curTime -last_update;
+        last_update = curTime;
+        x = acceleration.x;
+        y = acceleration.y;
+        z = acceleration.z;
+        var speed = Math.abs(x +y + z - last_x - last_y - last_z) / diffTime * 10000;
+        if (speed > SHAKE_THRESHOLD) {
+            if ((last_time != 0 && (curTime - last_time < 2000))) {
+                return;
+            }
+            if (count <= 0) {return;}
+            last_time = curTime;
+            setTimeout(function(){
+                //摇一摇
+                $('#attack').click();
+            }, 1500);
+        }
+        last_x = x;
+        last_y = y;
+        last_z = z;
+    }
+}
 $(function(){
     $.ajaxSetup({
         headers: {
@@ -74,8 +113,8 @@ $(function(){
                                     $('#coins').text(coins+parseInt(data.coins));
                                     str += '<br/>年兽掉落了<b>'+data.coins+'</b>个金币!';
                                 }
-                                var count = parseInt($('#attackNum').text());
-                                $('#attackNum').text(count-1);
+                                count--;
+                                $('#attackNum').text(count);
                                 $('#alertext').html(str);
 
                                 setTimeout(function(){
