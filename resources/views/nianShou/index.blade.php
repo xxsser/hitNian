@@ -67,7 +67,11 @@
                 <tr>
                     <td>{{ $gift['name'] }}</td>
                     <td>{{ $gift['coin'] }}</td>
-                    <td><button class="exchange btn-short" value="{{ $gift['id'] }}">兑换</button></td>
+                    @if($gift['num'] > 0)
+                        <td><button class="exchange btn-short" value="{{ $gift['id'] }}">兑换</button></td>
+                    @else
+                        <td><span>已兑完</span></td>
+                    @endif
                 </tr>
             @endforeach
         </table>
