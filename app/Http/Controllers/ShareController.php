@@ -61,7 +61,7 @@ class ShareController extends Controller
                     DB::rollback();
                 }
             }
-            $wechat->getFanid($user);
+            $wechat->getWechatInfo($user);
         }
         return redirect(URL::action('IndexController@startIndex'));
     }
