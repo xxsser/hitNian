@@ -60,8 +60,8 @@ class ShareController extends Controller
                 }catch(Exception $e) {
                     DB::rollback();
                 }
-                $wechat->getFanid($user);
             }
+            $wechat->getFanid($user);
         }
         return redirect(URL::action('IndexController@startIndex'));
     }
