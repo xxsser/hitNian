@@ -49,7 +49,7 @@ class ShareController extends Controller
                     ]);
                     //给分享用户奖励50金币
                     if(DB::table('gamedatas')->where('fan_id',$parentid)->count()){
-                        DB::table('gamedatas')->where('fan_id',$parentid)->increment('coins',config('customs.shareCoin'));
+                        DB::table('gamedatas')->where('fan_id',$parentid)->increment('coins',config('customs.shareCoin'),['updated_at'=>Carbon::now()]);
                     }else{
                         DB::table('gamedatas')->insert([
                             'fan_id'    =>  $parentid,
