@@ -25,11 +25,15 @@ class WeAuthController extends Controller
     }
 
     //获取微信用户信息
-    public function getWechatInfo(){
+    public function getWechatInfo($userInfo=false){
         if (session('logged_user')) {
             $user = session('logged_user');
         } else {
-            $user = self::wechatAuth();
+            if($userInfo==false){
+                $user = self::wechatAuth();
+            }else{
+                $user = $userInfo;
+            }
             $user->add('fid',self::getFanid( $user->all() ) );
             session(['logged_user'=>$user->all()]);
         }

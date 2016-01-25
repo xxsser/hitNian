@@ -39,6 +39,7 @@ class AttackController extends Controller
             ->update([
                 'damages' => DB::raw('damages + '.$damageValue),
                 'coins' => DB::raw('coins + '.$coinValue),
+                'updated_at'=>Carbon::now(),
             ])){
             \App\Gamedata::insert([
                 'fan_id'    =>  $request->input('fid'),
