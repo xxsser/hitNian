@@ -170,7 +170,7 @@ $(function(){
 //设置分享内容
 function setShare(trend){
     return {
-        title: '摇一摇再升级，年兽陪你过大年', // 分享标题
+        title: '摇一摇再升级，年兽陪你过大年 | 华东品牌服饰广场', // 分享标题
         desc: '动动手腕，攻击年兽有奖品，更有iphone6S等豪礼等着你，年兽大战等你来!', // 分享描述
         link: 'http://hdwyc.szhida.cn/nian/sharelink/'+$('#fid').val(), // 分享链接
         imgUrl: 'http://hdwyc.szhida.cn/nian/Images/fx.jpg', // 分享图标

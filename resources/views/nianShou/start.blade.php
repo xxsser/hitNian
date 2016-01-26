@@ -56,7 +56,7 @@
         });
         function setShare(trend){
             return {
-                    title: '摇一摇再升级，年兽陪你过大年', // 分享标题
+                    title: '摇一摇再升级，年兽陪你过大年 | 华东品牌服饰广场', // 分享标题
                     desc: '动动手腕，攻击年兽有奖品，更有iphone6S等豪礼等着你，年兽大战等你来!', // 分享描述
                     link: '{{ URL::current() }}/sharelink/'+$('#fid').val(), // 分享链接
                     imgUrl: '{{ URL::current() }}/Images/fx.jpg', // 分享图标
