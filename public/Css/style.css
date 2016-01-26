@@ -37,7 +37,7 @@ img{max-width:100%;}
 
 .share{width:100%;height:100%;background:#000;position:absolute;top:0;left:0;z-index:1000;text-align:center;opacity:0.8;display:none;}
 .share img{width:80%;}
-.logo {width:60%; margin-top: 40%}
+.logo {width:80%; margin-top: 40%}
 
 .alert{width:80%;height:15%;position:absolute;top:35%;left:10%;z-index:999;text-align:center;display:none;}
 .alert .text {position:inherit;top: 10%;color:#FFF;font-size:15px;width:90%;height:60%;margin-left: 5%; overflow: hidden}
