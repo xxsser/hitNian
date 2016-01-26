@@ -119,7 +119,7 @@ $(function(){
                                     $('#coins').text(coins+parseInt(data.coins));
                                     str += '<br/>年兽掉落了<b>'+data.coins+'</b>个金币!';
                                 }
-                                count--;
+                                if(count>=1){count--;}
                                 $('#attackNum').text(count);
                                 $('#alertext').html(str);
 
@@ -180,7 +180,6 @@ function setShare(trend){
             // 用户确认分享后执行的回调函数
             $.post('share',{'fid':$('#fid').val(),'shared':trend},function(data){
                 if(data.state == 'success'){
-                    var count = $('#attackNum').text();
                     $('#attackNum').text(count+1);
                     $('#share').hide();
                 }
