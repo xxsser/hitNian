@@ -127,7 +127,7 @@
     <dl style="font-size:0.8em;color:#FFF; font-weight: bold; line-height:1.8em;height: 65%;overflow-y:auto;">
         <dd>1.每人每天可以攻击年兽两次。将页面分享给好友或者朋友圈可以增加一次攻击机会。</dd>
         <dd>2.每次攻击年兽将随机掉落金币，攻击方式：摇一摇或点击攻击按钮，每次攻击金币<img src="Images/coin.png" style="width: 25%" />和伤害值<img src="Images/shanghai.png" style="width: 25%" />予以累加。</dd>
-        <dd>3.好友点击通过您的分享首次进入游戏，可获赠200金币。</dd>
+        <dd>3.好友点击通过您的分享首次进入游戏，可获赠50金币。</dd>
         <dd>4.金币可在游戏中兑换礼品。</dd>
         <dd>5.英雄榜伤害排名5分钟刷新一次，最终排名以活动结束时为准。</dd>
         <dd>6.金币每周清零一次。</dd>
