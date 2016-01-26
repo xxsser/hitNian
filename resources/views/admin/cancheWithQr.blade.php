@@ -28,8 +28,8 @@
                             <div class="form-group control-group">
                                 <label class="col-md-4 control-label">核销类型</label>
                                 <div class="col-md-6">
-                                    <label>代金劵:<input type="radio" class="radio-inline" name="type" value="money" checked /></label>
-                                    <label>实物类:<input type="radio" class="radio-inline" name="type" value="gift" /></label>
+                                    <label>代金劵:<input type="radio" class="radio-inline" name="type" value="money"  /></label>
+                                    <label>实物类:<input type="radio" class="radio-inline" name="type" value="gift" checked /></label>
                                 </div>
                             </div>
 
