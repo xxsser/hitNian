@@ -52,9 +52,9 @@
             @endif
             <div class="panel panel-default">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active">
-                        <a href="#home" role="tab" aria-controls="money" data-toggle="tab">代金劵类列表</a></li>
                     <li role="presentation">
+                        <a href="#home" role="tab" aria-controls="money" data-toggle="tab">代金劵类列表</a></li>
+                    <li role="presentation" class="active">
                         <a href="#profile" role="tab" aria-controls="gift" data-toggle="tab">实物类列表</a></li>
                 </ul>
                 <div class="tab-content">
