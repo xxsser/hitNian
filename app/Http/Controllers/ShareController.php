@@ -29,6 +29,7 @@ class ShareController extends Controller
     public function shareLink($parentid) {
         //判断父级用户金币是否超限
         $par_data = \App\Gamedata::where('fan_id',$parentid)->first();
+        dd($par_data);
         if($par_data->coins >= config('customs.coinLimit')){
             return redirect(URL::action('IndexController@startIndex'));
         }
