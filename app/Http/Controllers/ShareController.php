@@ -27,12 +27,6 @@ class ShareController extends Controller
 
     //用户分享链接验证跳转
     public function shareLink($parentid) {
-        //判断父级用户金币是否超限
-        $par_data = \App\Gamedata::where('fan_id',$parentid)->first();
-        dd($par_data);
-        if($par_data->coins >= config('customs.coinLimit')){
-            return redirect(URL::action('IndexController@startIndex'));
-        }
         //检查session是否有fid
         if(!Session::has('logged_user')){
             //获取用户openid
@@ -40,6 +34,11 @@ class ShareController extends Controller
             $user = $wechat->wechatAuth();
             //查询是否有该用户
             if(empty(\App\Fan::where('openid',$user->openid)->first()) && \App\Fan::find($parentid)){
+                //判断父级用户金币是否超限
+                $par_data = \App\Gamedata::where('fan_id',$parentid)->first();
+                if($par_data->coins >= config('customs.coinLimit')){
+                    return redirect(URL::action('IndexController@startIndex'));
+                }
                 DB::beginTransaction();
                 try{
                     //保存用户信息 获取新用户ID
