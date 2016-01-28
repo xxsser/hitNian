@@ -81,7 +81,7 @@
 <div  id="guize" style="position: absolute; right: 0px;top: 3%;">
     <img src="Images/yxgz.png" style="width: 80%"/>
 </div>
-<div id="m1">当前参与人数{{ $userNum }}人<br />活动剩余{{ \Carbon\Carbon::create(2016,2,8)->diffInDays() }}天</div>
+<div id="m1">当前参与人数{{ $userNum }}人<br />活动剩余{{ \Carbon\Carbon::create(2016,2,22)->diffInDays() }}天</div>
 <div id="p1">
     <div style="text-align:center;margin-top: 20%">
         <img src="Images/shou.png" id="hear2" />
