@@ -52,14 +52,27 @@
             @endif
             <div class="panel panel-default">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation">
-                        <a href="#home" role="tab" aria-controls="money" data-toggle="tab">代金劵类列表</a></li>
-                    <li role="presentation" class="active">
+                    <li role="presentation" class="active" >
                         <a href="#profile" role="tab" aria-controls="gift" data-toggle="tab">实物类列表</a></li>
+                    <li role="presentation" >
+                        <a href="#home" role="tab" aria-controls="money" data-toggle="tab">代金劵类列表</a></li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="home" role="tabpanel">
                         <br>
+                        <div class="tab-pane" id="profile" role="tabpanel">
+                            <div class="panel-body" id="gift">
+                                <ul>
+                                    @if($prizes['gift'])
+                                        @foreach( $prizes['gift'] as $prize)
+                                            <li>{{ $prize }}</li>
+                                        @endforeach
+                                    @else
+                                        <li>该用户没有实物类奖品</li>
+                                    @endif
+                                </ul>
+                            </div>
+                        </div>
                         <div class="panel-body" id="money">
                             <ul>
                                 @if($prizes['money'])
@@ -70,19 +83,6 @@
                                     <li>代金劵总金额:{{ $countMoney }} 元</li>
                                 @else
                                     <li>该用户没有代金劵类奖品</li>
-                                @endif
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="profile" role="tabpanel">
-                        <div class="panel-body" id="gift">
-                            <ul>
-                                @if($prizes['gift'])
-                                    @foreach( $prizes['gift'] as $prize)
-                                        <li>{{ $prize }}</li>
-                                    @endforeach
-                                @else
-                                    <li>该用户没有实物类奖品</li>
                                 @endif
                             </ul>
                         </div>
