@@ -68,7 +68,7 @@ class AdminController extends Controller
         if($request->input('key') == 888){  //验证密钥
             $up = DB::table('exchanges')->leftJoin('prizes' , 'exchanges.prize_id', '=' ,'prizes.id')
                 ->where(['exchanges.fan_id'=>$request->input('fid'),'prizes.type'=>$request->input('type')])
-                ->update(['exchanges.isget'=>1]);
+                ->update(['exchanges.isget'=>1,'exchanges.updated_at'=>Carbon::now()]);
             //$up = \App\Exchange::where(['fan_id'=>$request->input('fid'),'type'=>$request->input('type')])->unget()->update(['isget'=>1]);
             if($up > 0 ){
                 if($request->input('phone') != ''){
