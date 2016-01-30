@@ -33,23 +33,29 @@ class PrizeController extends Controller
         if(empty($giftInfo)){
             return ['state'=>'coin_lack'];
         }
-        //处理数据
-        DB::beginTransaction();
-        try {
-            //添加兑换记录
-            DB::table('exchanges')->insert([
-                'fan_id'    =>  $fid,
-                'prize_id'  =>  $request->input('pid'),
-            ]);
-            //扣除用户金币
-            DB::table('gamedatas')->where('fan_id',$fid)->decrement('coins',$giftInfo->coin);
-            //消减库存
-            DB::table('prizes')->where('id',$request->input('pid'))->decrement('num');
-            DB::commit();
-        }catch(Exception $e) {
-            DB::rollback();
+        //查询用户是否已兑换改奖品
+        $is_exchanged = \App\Exchange::where(['fan_id'=>$fid,'prize_id'=>$request->input('pid')])->first();
+        if(empty($is_exchanged)){
+            //处理数据
+            DB::beginTransaction();
+            try {
+                //添加兑换记录
+                DB::table('exchanges')->insert([
+                    'fan_id'    =>  $fid,
+                    'prize_id'  =>  $request->input('pid'),
+                ]);
+                //扣除用户金币
+                DB::table('gamedatas')->where('fan_id',$fid)->decrement('coins',$giftInfo->coin);
+                //消减库存
+                DB::table('prizes')->where('id',$request->input('pid'))->decrement('num');
+                DB::commit();
+            }catch(Exception $e) {
+                DB::rollback();
+            }
+            return ['state'=>'success'];
+        }else{
+            return ['state'=>'exchanged'];
         }
-        return ['state'=>'success'];
     }
 
     //用户查询奖品页
