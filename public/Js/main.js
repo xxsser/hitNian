@@ -65,7 +65,7 @@ $(function(){
                         $('#alertext').text('您的金币不足');
                         break;
                     case 'exchanged' :
-                        $('#alertext').text('您已经兑换过改奖品，换一个试试吧');
+                        $('#alertext').text('您已经兑换过该奖品，换一个试试吧');
                         break;
                     case 'noAuth' :
                         $('#alertext').text('您还没有登陆');
