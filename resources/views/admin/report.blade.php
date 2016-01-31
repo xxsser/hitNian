@@ -9,5 +9,5 @@
 
 昨日兑走奖品： <br>
 @foreach($yesterday_exchang_prize as $value)
-    {{ var_dump($value) }}
+    {{ $value['name'] }}<br>
 @endforeach
