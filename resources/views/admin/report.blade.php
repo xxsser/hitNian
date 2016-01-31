@@ -10,9 +10,10 @@
 昨日兑走奖品： <br>
 <table>
     @foreach($yesterday_exchang_prize as $value)
+        {{ var_dump($value) }}
         <tr>
             <td>{{ $value['name'] }}</td>
-            <td>{{ $value['COUNT(*)'] }}</td>
+            <td>{{ $value['pnum'] }}</td>
         </tr>
     @endforeach
 </table>
