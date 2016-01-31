@@ -58,7 +58,7 @@ class ReportController extends Controller
         $prizes = \App\Exchange::with(['prize'=>function($query){
             $query->select('id','name','rank','type');
         }])->select('id','prize_id','created_at')
-            ->whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->unget()->get();
+            ->whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->unget()->groupBy('prize_id')->get();
 
         return $prizes;
     }
