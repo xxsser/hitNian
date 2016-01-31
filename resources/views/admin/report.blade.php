@@ -12,7 +12,7 @@
     @foreach($yesterday_exchang_prize as $value)
         <tr>
             <td>{{ $value['name'] }}</td>
-            <td>{{ $value['num'] }}</td>
+            <td>{{ $value['COUNT(*)'] }}</td>
         </tr>
     @endforeach
 </table>

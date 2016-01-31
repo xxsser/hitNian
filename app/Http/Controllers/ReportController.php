@@ -54,7 +54,7 @@ class ReportController extends Controller
     }
 
     private function getExchangeInfo(){
-        $prizes = DB::select('SELECT P.name,COUNT(*) as num from exchanges EX JOIN prizes P ON EX.prize_id=P.id WHERE EX.created_at BETWEEN ? AND ? GROUP BY `prize_id`;', [Carbon::yesterday(),Carbon::today()]);
+        $prizes = DB::select('SELECT P.name,COUNT(*) from exchanges EX JOIN prizes P ON EX.prize_id=P.id WHERE EX.created_at BETWEEN ? AND ? GROUP BY `prize_id`;', [Carbon::yesterday(),Carbon::today()]);
         return $prizes;
     }
 
