@@ -8,6 +8,11 @@
 通过分享链接首次进入游戏用户数：{{ $yesterday_sharelink_user }} <br>
 
 昨日兑走奖品： <br>
-@foreach($yesterday_exchang_prize as $value)
-    {{ var_dump($value) }}<br>
-@endforeach
+<table>
+    @foreach($yesterday_exchang_prize as $value)
+        <tr>
+            <td>{{ $value['name'] }}</td>
+            <td>{{ $value['num'] }}</td>
+        </tr>
+    @endforeach
+</table>
