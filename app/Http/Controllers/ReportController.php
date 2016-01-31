@@ -36,7 +36,7 @@ class ReportController extends Controller
     }
 
     private function getShareNum(){
-        return \App\Share::whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->count('id');
+        return DB::table('shares')->whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->count(DB::raw('DISTINCT fan_id'));
     }
 
     private function getShareCoinNum(){
@@ -44,7 +44,7 @@ class ReportController extends Controller
     }
 
     private function getAttackFanCount(){
-        return \App\Attack::whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->groupBy('fan_id')->count();
+        return \App\Attack::whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->distinct('fan_id')->count();
     }
 
     private function getShareLinkUser(){
