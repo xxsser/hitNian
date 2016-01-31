@@ -1,6 +1,5 @@
 用户总数：{{ $count }} <br>
 昨日新增用户数: {{ $yesterday_count }} <br>
-{{ dd($yesterday_count) }}
 昨日攻击掉落总金币： {{ $yesterday_attack_coin }} <br>
 昨日分享送出总金币： {{ $yesterday_share_coin }} <br>
 昨日发放总金币： {{ $yesterday_attack_coin+$yesterday_share_coin }} <br>

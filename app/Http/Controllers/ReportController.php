@@ -26,17 +26,17 @@ class ReportController extends Controller
 
     private function getCountUser($range=''){
         if(is_array($range)){
-            return \App\Fan::whereBetween('created_at',[$range['from'],$range['to']])->count('id');
+            return \App\Fan::whereBetween('created_at',[$range['form'],$range['to']])->count('id');
         }
         return \App\Fan::count('id');
     }
 
     private function getAttackCoinNum(){
-        return \App\Attack::whereBrtween('created_at',[Carbon::yesterday(),Carbon::today()])->sum('coin');
+        return \App\Attack::whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->sum('coin');
     }
 
     private function getShareNum(){
-        return \App\Share::whereBrtween('created_at',[Carbon::yesterday(),Carbon::today()])->count('id');
+        return \App\Share::whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->count('id');
     }
 
     private function getShareCoinNum(){
@@ -44,12 +44,12 @@ class ReportController extends Controller
     }
 
     private function getAttackFanCount(){
-        return \App\Attack::whereBrtween('created_at',[Carbon::yesterday(),Carbon::today()])->distinct('fan_id')->count('id');
+        return \App\Attack::whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->distinct('fan_id')->count('id');
     }
 
     private function getShareLinkUser(){
         return DB::table('recommends')
-            ->whereBrtween('created_at',[Carbon::yesterday(),Carbon::today()])
+            ->whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])
             ->count('id');
     }
 
@@ -57,7 +57,9 @@ class ReportController extends Controller
         $prizes = \App\Exchange::with(['prize'=>function($query){
             $query->select('id','name','rank','type');
         }])->select('id','prize_id','created_at')
-            ->whereBrtween('created_at',[Carbon::yesterday(),Carbon::today()])->unget()->get();
+            ->whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->unget()->get();
+
+        return $prizes;
     }
 
 }
