@@ -11,8 +11,8 @@
 <table>
     @foreach($yesterday_exchang_prize as $value)
         <tr>
-            <td>{{ $value->name }}</td>
-            <td>{{ $value->pnum }}</td>
+            <td>{{ $value->name }}个</td>
+            <td>{{ $value->pnum }}个</td>
         </tr>
     @endforeach
 </table>
