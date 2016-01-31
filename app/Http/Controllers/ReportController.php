@@ -45,7 +45,6 @@ class ReportController extends Controller
 
     private function getAttackFanCount(){
         return DB::table('attacks')->whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->count(DB::raw('DISTINCT fan_id'));
-        //return \App\Attack::whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->distinct('fan_id')->count();
     }
 
     private function getShareLinkUser(){
@@ -56,10 +55,9 @@ class ReportController extends Controller
 
     private function getExchangeInfo(){
         $prizes = \App\Exchange::with(['prize'=>function($query){
-            $query->select('id','name','rank','type');
-        }])->select('id','prize_id','created_at')
-            ->whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->unget()->groupBy('prize_id')->get();
-
+            $query->select('id','name');
+        }])->select('id','prize_id')
+            ->whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->unget()->groupBy('prize_id')->count('prize_id');
         return $prizes;
     }
 
