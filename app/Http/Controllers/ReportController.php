@@ -44,7 +44,7 @@ class ReportController extends Controller
     }
 
     private function getAttackFanCount(){
-        return \App\Attack::whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->distinct('fan_id')->count();
+        return \App\Attack::whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->groupBy('fan_id')->count();
     }
 
     private function getShareLinkUser(){
