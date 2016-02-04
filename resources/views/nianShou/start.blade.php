@@ -79,7 +79,7 @@
 <body>
 <input type="hidden" id="fid" value="{{ $user['fid'] }}" />
 <dl style="width:100%;color:#FFF;font-size:1.3em;text-align:center;line-height:1.5em;margin-top:0;font-weight: bold">
-    <marquee direction="left" height="30" scrollamount="1">
+    <marquee direction="left" height="30" scrollamount="5">
         <p style="text-align: center">通知：春节假期期间（2月7日到2月14日）奖品停止兑换。</p>
     </marquee>
 </dl>
