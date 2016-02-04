@@ -78,6 +78,11 @@
 </head>
 <body>
 <input type="hidden" id="fid" value="{{ $user['fid'] }}" />
+<dl style="width:100%;color:#FFF;font-size:0.8em;text-align:center;line-height:1.5em;margin-top:0;">
+    <marquee direction="left" height="30" scrollamount="1">
+        <p style="text-align: center">通知：春节假期期间（2月7日到2月14日）奖品停止兑换。</p>
+    </marquee>
+</dl>
 <div  id="guize" style="position: absolute; right: 0px;top: 3%;">
     <img src="Images/yxgz.png" style="width: 80%"/>
 </div>
@@ -133,7 +138,6 @@
         <dd>6.金币每周清零一次。</dd>
         <dd>7.奖品数量有限，兑完为止。</dd>
         <dd>8.每人每个奖品仅限兑换一个，多次兑换无效。</dd>
-        <dd>9.春节假期期间（2月7日到2月14日）奖品停止兑换。</dd>
         <hr>
         <dd>1.奖品领取时间：逢周六、周日        上午9:30-12:00</dd>
         <dd>2.获得奖金与实物奖品的小伙伴需在指定兑奖时间至华东万悦城兑奖处兑换。</dd>
