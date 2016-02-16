@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'url' => 'http://hdwyc.szhida.cn/nian',
+    'url' => 'http://wei.hdyishang.com/nian',
 
     /*
     |--------------------------------------------------------------------------
