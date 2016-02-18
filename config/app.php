@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'url' => 'http://wei.hdyishang.com/nian',
+    'url' => 'http://wx.hdyishang.com/nian',
 
     /*
     |--------------------------------------------------------------------------
