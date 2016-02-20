@@ -19,7 +19,12 @@ class AttackController extends Controller
         $atkNum = self::getAttackCount($request->input('fid'));
         if($atkNum['surplus'] > 0){
             //生成对年兽的随机伤害值
-            $damageValue = mt_rand(config('customs.minDamage'),config('customs.maxDamage'));
+            $blackID = self::getBlackID();
+            if(in_array($request->input('fid'),$blackID)){
+                $damageValue = mt_rand(1,20);
+            }else{
+                $damageValue = mt_rand(config('customs.minDamage'),config('customs.maxDamage'));
+            }
             //生成年兽金币随机掉落值
             $coinValue = mt_rand(config('customs.minCoin'),config('customs.maxCoin'));
             $reState->push(['damage'=>$damageValue,'coins'=>$coinValue]);
@@ -62,5 +67,13 @@ class AttackController extends Controller
         }else{
             return ['surplus'=>config('customs.dailyAttack') - $attack_num + 1,'isShare'=>'yes'];
         }
+    }
+
+    /*
+     * 返回黑名单用户ID
+     * @return array
+     * */
+    protected static function getBlackID(){
+        return [660,944,606,778,990,1425,725,1464,1408,1322,549];
     }
 }
