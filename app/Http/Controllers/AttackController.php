@@ -74,6 +74,6 @@ class AttackController extends Controller
      * @return array
      * */
     protected static function getBlackID(){
-        return [660,944,606,778,990,1425,725,1464,1408,1322,549];
+        return [660,944,606,778,990,1425,725,1464,1408,1322];
     }
 }
