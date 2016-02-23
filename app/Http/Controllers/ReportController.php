@@ -58,4 +58,16 @@ class ReportController extends Controller
         return $prizes;
     }
 
+    public function buildCoin(){
+        $coins = DB::select('SELECT fan_id,SUM(coin) AS cnum from attacks WHERE created_at > "2016-02-22" GROUP BY `fan_id`');
+        foreach($coins as $coin){
+            DB::table('gamedatas')
+                ->where('fan_id', $coin['fan_id'])
+                ->update([
+                    'coins' => DB::raw('coins + '.$coin['cnum']),
+                    'updated_at'=>Carbon::now(),
+                ]);
+        }
+    }
+
 }
