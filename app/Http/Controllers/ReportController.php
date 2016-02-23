@@ -60,9 +60,9 @@ class ReportController extends Controller
 
     public function buildCoin(){
         $coins = DB::select('SELECT fan_id,SUM(coin) AS cnum from attacks WHERE created_at > "2016-02-22" GROUP BY `fan_id`');
-        dd($coins[1]);
+        //dd($coins[1]->cnum);
         foreach($coins as $coin){
-            \App\Gamedata::where('fan_id',$coin['fan_id'])->increment('coins',$coin['cnum']);
+            \App\Gamedata::where('fan_id',$coin->fan_id)->increment('coins',$coin->cnum);
             /*DB::table('gamedatas')
                 ->where('fan_id', $coin['fan_id'])
                 ->update([
