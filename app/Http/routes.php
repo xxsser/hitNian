@@ -34,7 +34,7 @@ Route::group(['middleware' => ['web'],'prefix' => 'nian'], function () {
     Route::post('/admin/canche_fid','AdminController@cancheFid');
     Route::get('/report','ReportController@index');
     //bulid
-    Route::get('/bulid','ReportController@buildCoin');
+    //Route::get('/bulid','ReportController@buildCoin');
     //活动首页路由
     Route::get('/','IndexController@startIndex');
     Route::get('/nianshou','IndexController@index');
