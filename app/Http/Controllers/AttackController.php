@@ -25,8 +25,15 @@ class AttackController extends Controller
             }else{
                 $damageValue = mt_rand(config('customs.minDamage'),config('customs.maxDamage'));
             }
-            //生成年兽金币随机掉落值
-            $coinValue = mt_rand(config('customs.minCoin'),config('customs.maxCoin'));
+            //获取用户游戏数据
+            $fan = \App\Gamedata::select('damages','coins')
+                ->where('fan_id',$request->input('fid'))->first();
+            if($fan->coins >= config('customs.maxCoins')){
+                $coinValue = 0;
+            }else{
+                //生成年兽金币随机掉落值
+                $coinValue = mt_rand(config('customs.minCoin'),config('customs.maxCoin'));
+            }
             $reState->push(['damage'=>$damageValue,'coins'=>$coinValue]);
         }else{
             return $reState->push(['state'=>'over','isShare'=>$atkNum['isShare']])->collapse();
