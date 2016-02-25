@@ -80,13 +80,13 @@
 <input type="hidden" id="fid" value="{{ $user['fid'] }}" />
 <dl style="width:100%;color:#FFF;font-size:1.3em;text-align:center;line-height:1.5em;margin-top:0;font-weight: bold">
     <marquee direction="left" height="30" scrollamount="5">
-        <p style="text-align: center">通知：应大量用户的要求，此次年兽活动时间暂延长至2016年2月28日。请相互转告！</p>
+        <p style="text-align: center">通知：应大量用户的要求，此次年兽活动时间暂延长至2016年3月20日。请相互转告！</p>
     </marquee>
 </dl>
 <div  id="guize" style="position: absolute; right: 0px;top: 3%;">
     <img src="Images/yxgz.png" style="width: 80%"/>
 </div>
-<div id="m1">当前参与人数{{ $userNum }}人<br />活动剩余{{ \Carbon\Carbon::create(2016,2,28)->diffInDays() }}天</div>
+<div id="m1">当前参与人数{{ $userNum }}人<br />活动剩余{{ \Carbon\Carbon::create(2016,3,20)->diffInDays() }}天</div>
 <div id="p1">
     <div style="text-align:center;margin-top: 20%">
         <img src="Images/shou.png" id="hear2" />
