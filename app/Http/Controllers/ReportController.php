@@ -11,10 +11,20 @@ use Illuminate\Support\Facades\DB;
 
 class ReportController extends Controller
 {
+    private static $form;
+    private static $to;
+
+    public function __construct()
+    {
+        //self::$form = Carbon::yesterday();
+        self::$form = Carbon::today()->subWeek();
+        self::$to = Carbon::today();
+    }
+
     public function index(){
         return view('admin.report',[
             'count' => self::getCountUser(),
-            'yesterday_count' => self::getCountUser(['form'=>Carbon::yesterday(),'to'=>Carbon::today()]),
+            'yesterday_count' => self::getCountUser(['form'=>self::$form,'to'=>self::$to]),
             'yesterday_attack_coin' => self::getAttackCoinNum(),
             'yesterday_share_coin' => self::getShareCoinNum(),
             'yesterday_join_num' => self::getAttackFanCount(),
@@ -32,11 +42,11 @@ class ReportController extends Controller
     }
 
     private function getAttackCoinNum(){
-        return \App\Attack::whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->sum('coin');
+        return \App\Attack::whereBetween('created_at',[self::$form,self::$to])->sum('coin');
     }
 
     private function getShareNum(){
-        return \App\Share::whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->count('id');
+        return \App\Share::whereBetween('created_at',[self::$form,self::$to])->count('id');
     }
 
     private function getShareCoinNum(){
@@ -44,17 +54,17 @@ class ReportController extends Controller
     }
 
     private function getAttackFanCount(){
-        return DB::table('attacks')->whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])->count(DB::raw('DISTINCT fan_id'));
+        return DB::table('attacks')->whereBetween('created_at',[self::$form,self::$to])->count(DB::raw('DISTINCT fan_id'));
     }
 
     private function getShareLinkUser(){
         return DB::table('recommends')
-            ->whereBetween('created_at',[Carbon::yesterday(),Carbon::today()])
+            ->whereBetween('created_at',[self::$form,self::$to])
             ->count('id');
     }
 
     private function getExchangeInfo(){
-        $prizes = DB::select('SELECT P.name,COUNT(*) AS pnum from exchanges EX JOIN prizes P ON EX.prize_id=P.id WHERE EX.created_at BETWEEN ? AND ? GROUP BY `prize_id`;', [Carbon::yesterday(),Carbon::today()]);
+        $prizes = DB::select('SELECT P.name,COUNT(*) AS pnum from exchanges EX JOIN prizes P ON EX.prize_id=P.id WHERE EX.created_at BETWEEN ? AND ? GROUP BY `prize_id`;', [self::$form,self::$to]);
         return $prizes;
     }
 
