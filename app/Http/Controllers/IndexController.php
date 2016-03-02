@@ -44,7 +44,7 @@ class IndexController extends Controller
         }else{
             $rank = \App\Gamedata::with(['fan'=>function($query){
                 $query->select('id','nikename');
-            }])->select('fan_id','damages')->orderBy('damages','desc')->take(10)->get();
+            }])->select('fan_id','damages')->orderBy('damages','desc')->take(20)->get();
             Cache::put('ranking', $rank, 10);
         }
         return $rank;
